@@ -1,6 +1,6 @@
 import smbus
 import math
-import time
+
 
 class MPU6050(object):
     #May not need this

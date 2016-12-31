@@ -1,5 +1,5 @@
-import sys
 from drivers.mpu6050.mpudata import MpuData
+import time
 
 if __name__ == '__main__':
     mpu = MpuData()
@@ -8,3 +8,4 @@ if __name__ == '__main__':
         mpu.getAccXYZ()
         mpu.getGyroXYZ()
         mpu.printValues('a')
+        time.sleep(0.5)
