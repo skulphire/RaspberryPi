@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/humanoid/')
+sys.path.append("/home/humanoid/")
 from Project.Drivers.MPU6050 import mpudata
 
 if __name__ == '__main__':
