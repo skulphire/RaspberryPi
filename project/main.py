@@ -1,6 +1,5 @@
 import sys
-print('/n'.join(sys.path))
-from project.drivers.mpu6050.mpudata import MpuData
+from drivers.mpu6050.mpudata import MpuData
 
 if __name__ == '__main__':
     mpu = MpuData()
