@@ -37,7 +37,7 @@ class MPU6050(object):
         radians = math.atan2(y, self.dist(x, z))
         return math.degrees(radians)
 
-    def mpuconfig(self.i2cAdd):
+    def mpuconfig(self, i2cAdd):
         self.bus = smbus.SMBus(1)  # or bus = smbus.SMBus(1) for Revision 2 boards
         self.address = i2cAdd  # This is the address value read via the i2cdetect command
         # Now wake the 6050 up as it starts in sleep mode
