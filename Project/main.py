@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/humanoid/RaspberryPi/Project')
+sys.path.append('/home/humanoid/RaspberryPi/Project/')
 from Project.Drivers.MPU6050 import mpudata
 
 if __name__ == '__main__':
