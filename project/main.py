@@ -1,4 +1,4 @@
-from Project.Drivers.MPU6050.mpudata import MpuData
+from project.drivers.mpu6050.mpudata import MpuData
 
 if __name__ == '__main__':
     mpu = MpuData()
