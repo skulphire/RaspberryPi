@@ -1,4 +1,4 @@
-from devices.mpu6050.mpu6050 import MPU6050
+from projects.devices import MPU6050
 
 
 class MpuData(object):
