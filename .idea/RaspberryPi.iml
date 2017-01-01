@@ -5,8 +5,6 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/project" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Adafruit-Raspberry-Pi-Python-Code" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Adafruit-Raspberry-Pi-Python-Code/Adafruit_PWM_Servo_Driver" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Adafruit-Raspberry-Pi-Python-Code/Adafruit_I2C" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
