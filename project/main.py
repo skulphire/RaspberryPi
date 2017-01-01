@@ -8,5 +8,5 @@ if __name__ == '__main__':
     while True:
         mpu.getAccXYZ()
         mpu.getGyroXYZ()
-        mpu.printValues('a')
+        mpu.printValues('b')
         time.sleep(0.5)
