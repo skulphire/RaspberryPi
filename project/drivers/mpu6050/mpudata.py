@@ -52,3 +52,10 @@ class MpuData(object):
             print("Gyro XYZ: ",self.gyroX," | ",self.gyroY," | ",self.gyroZ)
             print("X rotate: ",self.getXRotate())
             print("Y rotate: ",self.getYRotate())
+        elif choice == 'b':
+            print("X rotate: ", self.getXRotate())
+            print("Y rotate: ", self.getYRotate())
+        elif choice == 'c':
+            print("Acc XYZ: ", self.accX, " | ", self.accY, " | ", self.accZ)
+        elif choice == 'd':
+            print("Gyro XYZ: ", self.gyroX, " | ", self.gyroY, " | ", self.gyroZ)
