@@ -39,10 +39,12 @@ class MpuData(object):
 
     #x rotation from acc
     def getXRotate(self):
+        self.getAccXYZ()
         return self.mpu.get_x_rotation(self.accX,self.accY,self.accZ)
 
     #y rotation from acc
     def getYRotate(self):
+        self.getAccXYZ()
         return self.mpu.get_y_rotation(self.accX,self.accY,self.accZ)
 
     #prints values
