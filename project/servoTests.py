@@ -1,5 +1,6 @@
-from drivers.servos.Adafruit_PWM_Servo_Driver import PWM
-from drivers.mpu6050.mpudata import MpuData
+from Adafruit_PWM_Servo_Driver import PWM
+from project.drivers.mpu6050.mpudata import MpuData
+
 import time
 
 class servoTest(object):
