@@ -9,7 +9,7 @@ class Translator(object):
         self.mpu = MpuData()
         self.mpu.turnOn(0x68)
         # Initialise the PWM device using the default address
-        self.pwm = Adafruit_PCA9685.PCA9685()
+        self.pwm = Adafruit_PCA9685.PCA9685(0x41)
         self.pwm.set_pwm_freq(60)
 
         #min,max pulses out of 4096
