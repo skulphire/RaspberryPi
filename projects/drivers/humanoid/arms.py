@@ -9,9 +9,8 @@ class Arms(object):
         self.servoMin = 150
         self.servoMax = 600
     def leftShoulder(self, degrees):
-        while True:
-            if degrees == 0:
-                self.pwm.set_pwm(0,0,self.servoMin)
+        if degrees == 0:
+            self.pwm.set_pwm(0,0,self.servoMin)
 
-            elif degrees == 180:
-                self.pwm.set_pwm(0,0,self.servoMax)
+        elif degrees == 180:
+            self.pwm.set_pwm(0,0,self.servoMax)
