@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Adafruit-Raspberry-Pi-Python-Code" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Adafruit_Python_PCA9685" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Adafruit_Python_GPIO" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6.0 (C:\Users\Creghton\AppData\Local\Programs\Python\Python36-32\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

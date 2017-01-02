@@ -1,7 +1,7 @@
 from __future__ import division
 import time
 import Adafruit_PCA9685
-from projects.drivers.mpu6050.mpudata import MpuData
+from drivers.mpu6050.mpudata import MpuData
 
 
 class servoTest(object):
