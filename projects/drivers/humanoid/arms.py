@@ -8,7 +8,7 @@ class Arms(object):
 
     def leftShoulder(self, degrees):
         if degrees == 0:
-            self.pwm.set_pwm(15,0,150)
+            self.pwm.set_pwm(0,0,150)
             time.sleep(1)
         elif degrees == 180:
-            self.pwm.set_pwm(15,0,600)
+            self.pwm.set_pwm(0,0,600)
