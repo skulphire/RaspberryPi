@@ -1,4 +1,6 @@
-from Adafruit_PWM_Servo_Driver import PWM
+from __future__ import division
+import time
+from Adafruit_Python_PCA9685.Adafruit_PCA9685.PCA9685 import PCA9685
 from projects.drivers.mpu6050.mpudata import MpuData
 
 
@@ -7,8 +9,8 @@ class servoTest(object):
         self.mpu = MpuData()
 
         # Initialise the PWM device using the default address
-        self.pwm = PWM(0x40)
-        self.pwm.setPWMFreq(60)
+        self.pwm = PCA9685()
+        self.pwm.set_pwm_freq(60)
 
         #min,max pulses out of 4096
         self.servoMin = 150
@@ -22,6 +24,6 @@ class servoTest(object):
             self.xAxis = self.mpu.getXRotate()
             self.yAxis = self.mpu.getYRotate()
             if (self.yAxis < 0)&(self.yAxis > -30):
-                self.pwm.setPWM(0,0,self.servoMin)
+                self.pwm.set_pwm(0,0,self.servoMin)
             else:
-                self.pwm.setPWM(0,0,self.servoMax)
+                self.pwm.set_pwm(0,0,self.servoMax)
