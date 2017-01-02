@@ -17,7 +17,7 @@ class servoTest(object):
         self.servoMax = 600
         self.xAxis = 0
         self.yAxis = 0
-        self.balance()
+        #self.balance()
 
     def balance(self):
         while True:
