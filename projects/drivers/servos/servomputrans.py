@@ -4,7 +4,7 @@ import Adafruit_PCA9685.PCA9685
 from drivers.mpu6050.mpudata import MpuData
 
 
-class servoTest(object):
+class Translator(object):
     def __init__(self):
         self.mpu = MpuData()
         self.mpu.turnOn(0x68)
