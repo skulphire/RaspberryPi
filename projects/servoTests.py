@@ -1,6 +1,6 @@
 from __future__ import division
 import time
-from Adafruit_Python_PCA9685.Adafruit_PCA9685.PCA9685 import PCA9685
+import Adafruit_PCA9685
 from projects.drivers.mpu6050.mpudata import MpuData
 
 
@@ -9,7 +9,7 @@ class servoTest(object):
         self.mpu = MpuData()
 
         # Initialise the PWM device using the default address
-        self.pwm = PCA9685()
+        self.pwm = Adafruit_PCA9685.PCA9685()
         self.pwm.set_pwm_freq(60)
 
         #min,max pulses out of 4096
