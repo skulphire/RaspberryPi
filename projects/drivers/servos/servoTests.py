@@ -7,7 +7,7 @@ from drivers.mpu6050.mpudata import MpuData
 class servoTest(object):
     def __init__(self):
         self.mpu = MpuData()
-
+        self.mpu.turnOn(0x68)
         # Initialise the PWM device using the default address
         self.pwm = Adafruit_PCA9685.PCA9685()
         self.pwm.set_pwm_freq(60)
