@@ -11,6 +11,7 @@ class Arms(object):
     def leftShoulder(self, degrees):
         if degrees == 0:
             self.pwm.set_pwm(0,0,self.servoMin)
-
+            time.sleep(2)
+            self.pwm.set_pwm(0, 0, self.servoMax)
         elif degrees == 180:
             self.pwm.set_pwm(0,0,self.servoMax)
