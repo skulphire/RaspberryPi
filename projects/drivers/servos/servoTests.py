@@ -1,6 +1,6 @@
 from __future__ import division
 import time
-import Adafruit_PCA9685
+import Adafruit_PCA9685.PCA9685
 from drivers.mpu6050.mpudata import MpuData
 
 
