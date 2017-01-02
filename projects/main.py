@@ -7,14 +7,14 @@ import time
 #i2cdetect -y 1
 
 if __name__ == '__main__':
-    #arms = Arms()
-    #degrees = input("Enter number of degrees: ")
-    #arms.leftShoulder(degrees)
+    arms = Arms()
+    degrees = input("Enter number of degrees: ")
+    arms.leftShoulder(degrees)
 
 
 
-    servo = Translator()
-    servo.balance()
+    #servo = Translator()
+    #servo.balance()
 
 #    mpu = MpuData()
 #    mpu.turnOn(0x68)
