@@ -7,12 +7,12 @@ import time
 #i2cdetect -y 1
 
 if __name__ == '__main__':
-    arms = Arms()
-    #degrees = input("Enter number of degrees: ")
-    arms.leftHand(180)
-    time.sleep(2)
-    arms.leftHand(0)
-
+    arm = Arms()
+    arm.leftHand(0)
+    time.sleep(1)
+    arm.leftHand(90)
+    time.sleep(1)
+    arm.leftHand(180)
 
 
     #servo = Translator()
