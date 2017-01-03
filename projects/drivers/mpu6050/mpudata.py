@@ -4,6 +4,7 @@ from devices.mpu6050.mpu6050 import MPU6050
 class MpuData(object):
     def __init__(self):
         self.mpu = MPU6050()
+        self.mpu.mpuconfig(0x68)
         self.gyroX = 0
         self.gyroY = 0
         self.gyroZ = 0
