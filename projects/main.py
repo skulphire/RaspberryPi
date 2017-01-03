@@ -14,7 +14,8 @@ if __name__ == '__main__':
     arm.leftElbow(0)
     arm.leftShoulder(0)
 
-    arm.rightShoulder(90)
+    arm.rightShoulder(0)
+    arm.rightElbow(0)
 
     time.sleep(3)
     arm.servosOff()

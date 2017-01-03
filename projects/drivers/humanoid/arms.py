@@ -46,3 +46,10 @@ class Arms(object):
             self.tpwm.set_pwm(3,0,330)
         elif degrees == 0:
             self.tpwm.set_pwm(3, 0, 100)
+    def rightElbow(self, degrees):
+        if degrees == 0:
+            self.tpwm.set_pwm(4, 0, 600)
+        elif degrees == 90:
+            self.tpwm.set_pwm(4,0,380)
+        elif degrees == 180:
+            self.tpwm.set_pwm(4, 0, 150)
