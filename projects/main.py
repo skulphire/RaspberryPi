@@ -15,7 +15,7 @@ if __name__ == '__main__':
     arm.leftShoulder(0)
 
     arm.rightShoulder(0)
-    arm.rightElbow(90)
+    arm.rightElbow(180)
     arm.rightHand(90)
 
 
