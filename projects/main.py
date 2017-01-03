@@ -20,7 +20,7 @@ if __name__ == '__main__':
     while True:
         x = mpu.getXRotate()
         y = mpu.getYRotate()
-        if y > 20:
+        if y > 10:
             position.fallingBack()
         else:
             position.initial()
