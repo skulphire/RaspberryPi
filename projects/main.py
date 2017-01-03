@@ -13,8 +13,9 @@ if __name__ == '__main__':
    body.waist(90)
    time.sleep(1)
    body.waist(0)
+   time.sleep(1)
+   body.waist(45)
 
-   time.sleep(2)
    position.stop()
 
 

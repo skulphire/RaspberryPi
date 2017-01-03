@@ -16,6 +16,6 @@ class Body(object):
         if degrees == 0:
             self.bpwm.set_pwm(15, 0, 550)
         elif degrees == 90:
-            self.bpwm.set_pwm(15,0,330)
-        elif degrees == 180:
-            self.bpwm.set_pwm(15, 0, 100)
+            self.bpwm.set_pwm(15,0,350)
+        elif degrees == 45:
+            self.bpwm.set_pwm(15,0,450)
