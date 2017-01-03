@@ -25,7 +25,7 @@ if __name__ == '__main__':
         if y > 0:
             position.fallingBack()
         else:
-            position.initial()
+           # position.initial()
             position.stop()
 
     #while True:
