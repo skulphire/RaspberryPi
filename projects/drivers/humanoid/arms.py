@@ -19,4 +19,4 @@ class Arms(object):
             self.pwm.set_pwm(1,0,550)
 
         elif degrees == 180:
-            self.pwm.set_pwm(1,0,120)
+            self.pwm.set_pwm(1,0,150)
