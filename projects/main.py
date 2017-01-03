@@ -9,7 +9,12 @@ from drivers.mpu6050.mpudata import MpuData
 
 if __name__ == '__main__':
    body = Body()
-   body.waist(0)
+   position = Pos()
+   body.waist(90)
+
+   time.sleep(2)
+   position.stop()
+
 
     #while True:
         #mpu.printValues('b')
