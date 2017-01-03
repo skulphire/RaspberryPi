@@ -8,11 +8,11 @@ import time
 
 if __name__ == '__main__':
     arm = Arms()
-    arm.leftHand(0)
+    arm.leftHand(180)
     time.sleep(1)
     arm.leftHand(90)
     time.sleep(1)
-    arm.leftHand(180)
+    arm.leftHand(0)
 
     time.sleep(2)
     arm.leftElbow(0)
