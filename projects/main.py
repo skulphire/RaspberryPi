@@ -24,7 +24,7 @@ if __name__ == '__main__':
             position.fallingBack()
         else:
             position.initial()
-            position.stop()
+            #position.stop()
 
     #while True:
         #mpu.printValues('b')
