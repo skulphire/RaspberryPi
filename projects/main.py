@@ -22,11 +22,11 @@ if __name__ == '__main__':
     arm.leftElbow(180)
 
     time.sleep(2)
-    arm.leftShoulder(0)
+    arm.leftShoulder(180)
     time.sleep(1)
     arm.leftShoulder(90)
     time.sleep(1)
-    arm.leftShoulder(180)
+    arm.leftShoulder(0)
 
 
     #servo = Translator()
