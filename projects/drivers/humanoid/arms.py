@@ -14,3 +14,9 @@ class Arms(object):
 
         elif degrees == 180:
             self.pwm.set_pwm(0,0,100)
+    def leftElbow(self, degrees):
+        if degrees == 0:
+            self.pwm.set_pwm(0,0,550)
+
+        elif degrees == 180:
+            self.pwm.set_pwm(0,0,100)
