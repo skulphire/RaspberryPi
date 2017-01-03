@@ -10,7 +10,7 @@ if __name__ == '__main__':
    position = Pos()
    position.lookLeft()
    position.lookRight()
-   position.initial()
+   #position.initial()
    time.sleep(1)
 
    position.stop()
