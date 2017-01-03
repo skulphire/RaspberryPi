@@ -8,9 +8,19 @@ from drivers.mpu6050.mpudata import MpuData
 
 if __name__ == '__main__':
     mpu = MpuData()
+    x=0
+    y=0
+    for i in range(1,5):
+        x=mpu.getXRotate()
+        y=mpu.getYRotate()
+
+
     position = Pos()
     position.initial()
-    while True:
-        mpu.printValues('b')
-        time.sleep(1)
+    time.sleep(1)
+    position.stop()
+
+    #while True:
+        #mpu.printValues('b')
+        #time.sleep(1)
 
