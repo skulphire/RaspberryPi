@@ -22,7 +22,7 @@ class Arms(object):
             self.pwm.set_pwm(1,0,150)
     def leftHand(self, degrees):
         if degrees == 0:
-            self.pwm.set_pwm(2,0,600)
+            self.pwm.set_pwm(2,0,570)
 
         elif degrees == 180:
             self.pwm.set_pwm(2,0,100)
