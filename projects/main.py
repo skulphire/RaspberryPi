@@ -1,5 +1,6 @@
 import time
 from drivers.sets.positions import Pos
+from devices.humanoid.body import Body
 from drivers.mpu6050.mpudata import MpuData
 
 
@@ -7,26 +8,8 @@ from drivers.mpu6050.mpudata import MpuData
 #i2cdetect -y 1
 
 if __name__ == '__main__':
-
-
-    mpu = MpuData()
-    x=0
-    y=0
-    for i in range(1,5):
-        x=mpu.getXRotate()
-        y=mpu.getYRotate()
-    position = Pos()
-    position.initial()
-    time.sleep(1)
-    position.stop()
-    while True:
-        x = mpu.getXRotate()
-        y = mpu.getYRotate()
-        if y > 0:
-            position.fallingBack()
-        else:
-           # position.initial()
-            position.stop()
+   body = Body()
+   body.waist(0)
 
     #while True:
         #mpu.printValues('b')

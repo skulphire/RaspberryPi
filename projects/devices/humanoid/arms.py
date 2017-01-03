@@ -14,6 +14,7 @@ class Arms(object):
 
     def servosOff(self):
         self.tpwm.set_all_pwm(0,0)
+        self.bpwm.set_all_pwm(0,0)
 
     #LEFT ARM
     def leftShoulder(self, degrees):
