@@ -10,9 +10,9 @@ if __name__ == '__main__':
     arm = Arms()
 
     #standard position:
-    arm.leftHand(90)
-    arm.leftElbow(0)
     arm.leftShoulder(0)
+    arm.leftElbow(90)
+    arm.leftHand(0)
 
     arm.rightShoulder(0)
     arm.rightElbow(90)
