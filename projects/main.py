@@ -12,11 +12,11 @@ if __name__ == '__main__':
     #standard position:
     arm.leftShoulder(0)
     arm.leftElbow(90)
-    arm.leftHand(0)
+    arm.leftHand(180)
 
     arm.rightShoulder(0)
     arm.rightElbow(90)
-    arm.rightHand(0)
+    arm.rightHand(180)
 
 
     time.sleep(3)
