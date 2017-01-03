@@ -1,26 +1,12 @@
-from drivers.mpu6050.mpudata import MpuData
-from drivers.servos.servomputrans import Translator
-from drivers.humanoid.arms import Arms
 import time
-
+from drivers.sets.positions import Pos
 #usefull commands
 #i2cdetect -y 1
 
 if __name__ == '__main__':
-    arm = Arms()
+    position = Pos()
+    position.start()
 
-    #standard position:
-    arm.leftShoulder(0)
-    arm.leftElbow(0)
-    arm.leftHand(90)
-
-    arm.rightShoulder(0)
-    arm.rightElbow(0)
-    arm.rightHand(90)
-
-
-    time.sleep(3)
-    arm.servosOff()
     #servo = Translator()
     #servo.balance()
 
