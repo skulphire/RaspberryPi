@@ -13,6 +13,7 @@ if __name__ == '__main__':
     arm.leftHand(90)
     arm.leftElbow(0)
     arm.leftShoulder(0)
+
     arm.rightShoulder(0)
 
     time.sleep(3)

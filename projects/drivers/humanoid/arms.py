@@ -40,9 +40,9 @@ class Arms(object):
 
     #RIGHT ARM
     def rightShoulder(self, degrees):
-        if degrees == 0:
+        if degrees == 180:
             self.tpwm.set_pwm(3, 0, 550)
         elif degrees == 90:
             self.tpwm.set_pwm(3,0,330)
-        elif degrees == 180:
+        elif degrees == 0:
             self.tpwm.set_pwm(3, 0, 100)
