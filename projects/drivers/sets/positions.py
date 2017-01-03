@@ -7,6 +7,7 @@ class Pos(object):
     def __init__(self):
         self.arm = Arms()
         self.body = Body()
+        time.sleep(0.3)
 
     def stop(self):
         time.sleep(3)
