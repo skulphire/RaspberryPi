@@ -12,7 +12,10 @@ class Arms(object):
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
 
+    def servosOff(self):
+        self.tpwm.set_all_pwm(0,0)
 
+    #LEFT ARM
     def leftShoulder(self, degrees):
         if degrees == 0:
             self.tpwm.set_pwm(0, 0, 550)
@@ -34,3 +37,12 @@ class Arms(object):
             self.tpwm.set_pwm(2,0,330)
         elif degrees == 180:
             self.tpwm.set_pwm(2, 0, 100)
+
+    #RIGHT ARM
+    def rightShoulder(self, degrees):
+        if degrees == 0:
+            self.tpwm.set_pwm(0, 0, 550)
+        elif degrees == 90:
+            self.tpwm.set_pwm(0,0,330)
+        elif degrees == 180:
+            self.tpwm.set_pwm(0, 0, 100)
