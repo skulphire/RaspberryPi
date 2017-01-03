@@ -7,6 +7,8 @@ from drivers.mpu6050.mpudata import MpuData
 #i2cdetect -y 1
 
 if __name__ == '__main__':
+
+
     mpu = MpuData()
     x=0
     y=0
@@ -24,7 +26,7 @@ if __name__ == '__main__':
             position.fallingBack()
         else:
             position.initial()
-            #position.stop()
+            position.stop()
 
     #while True:
         #mpu.printValues('b')
