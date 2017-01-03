@@ -9,9 +9,9 @@ import time
 if __name__ == '__main__':
     arms = Arms()
     #degrees = input("Enter number of degrees: ")
-    arms.leftElbow(180)
+    arms.leftHand(180)
     time.sleep(2)
-    arms.leftElbow(0)
+    arms.leftHand(0)
 
 
 
