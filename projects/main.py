@@ -13,12 +13,18 @@ if __name__ == '__main__':
     for i in range(1,5):
         x=mpu.getXRotate()
         y=mpu.getYRotate()
-
-
     position = Pos()
     position.initial()
     time.sleep(1)
     position.stop()
+    while True:
+        x = mpu.getXRotate()
+        y = mpu.getYRotate()
+        if y > 20:
+            position.fallingBack()
+        else:
+            position.initial()
+            position.stop()
 
     #while True:
         #mpu.printValues('b')

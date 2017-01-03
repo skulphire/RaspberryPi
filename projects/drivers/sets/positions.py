@@ -19,3 +19,10 @@ class Pos(object):
         self.arm.rightShoulder(0)
         self.arm.rightElbow(0)
         self.arm.rightHand(90)
+
+    #method for falling backwards
+    def fallingBack(self):
+        self.arm.leftShoulder(90)
+        self.arm.rightShoulder(90)
+        self.arm.leftElbow(180)
+        self.arm.rightElbow(180)
