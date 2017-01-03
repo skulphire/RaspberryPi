@@ -14,6 +14,16 @@ if __name__ == '__main__':
     time.sleep(1)
     arm.leftHand(180)
 
+    time.sleep(2)
+    arm.leftElbow(0)
+    time.sleep(1)
+    arm.leftElbow(90)
+    time.sleep(1)
+    arm.leftElbow(180)
+
+    time.sleep(2)
+
+
 
     #servo = Translator()
     #servo.balance()

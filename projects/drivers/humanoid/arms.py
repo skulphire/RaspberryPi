@@ -16,13 +16,15 @@ class Arms(object):
     def leftShoulder(self, degrees):
         if degrees == 0:
             self.tpwm.set_pwm(0, 0, 550)
-
+        elif degrees == 90:
+            self.tpwm.set_pwm(0,0,330)
         elif degrees == 180:
             self.tpwm.set_pwm(0, 0, 100)
     def leftElbow(self, degrees):
         if degrees == 0:
             self.tpwm.set_pwm(1, 0, 600)
-
+        elif degrees == 90:
+            self.tpwm.set_pwm(1,0,300)
         elif degrees == 180:
             self.tpwm.set_pwm(1, 0, 150)
     def leftHand(self, degrees):
