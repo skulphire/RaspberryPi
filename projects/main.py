@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     #standard position:
     arm.leftHand(90)
-    arm.leftElbow(90)
+    arm.leftElbow(0)
     arm.leftShoulder(0)
 
 
