@@ -35,3 +35,6 @@ class Body(object):
             self.bpwm.set_pwm(13,0,600)
         elif degrees == 30:
             self.bpwm.set_pwm(13,0,500)
+    def leftthighY(self,degrees):
+        if degrees == 0:
+            self.bpwm.set_pwm(0,0,150)

@@ -24,6 +24,8 @@ class Pos(object):
         self.arm.rightHand(90)
 
         self.body.waist(45)
+        self.body.leftThighX(30)
+        self.body.rightThighX(30)
 
     #method for falling backwards
     def fallingBack(self):
@@ -42,8 +44,4 @@ class Pos(object):
         self.body.waist(45)
 
     def new(self):
-        self.body.leftThighX(0)
-        self.body.rightThighX(0)
-        time.sleep(1)
-        self.body.leftThighX(30)
-        self.body.rightThighX(30)
+        self.body.leftthighY(0)
