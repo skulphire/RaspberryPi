@@ -46,6 +46,3 @@ class Pos(object):
 
     def lookForward(self):
         self.body.waist(45)
-
-    def new(self):
-
