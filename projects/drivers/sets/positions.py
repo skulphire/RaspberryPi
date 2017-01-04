@@ -45,5 +45,5 @@ class Pos(object):
         self.body.leftThighX(0)
         self.body.rightThighX(0)
         time.sleep(1)
-        self.body.leftThighX(180)
-        self.body.rightThighX(180)
+        self.body.leftThighX(30)
+        self.body.rightThighX(30)
