@@ -38,7 +38,7 @@ class Body(object):
 
     def leftthighY(self,degrees):
         if degrees == 0:
-            self.bpwm.set_pwm(0,0,150)
+            self.bpwm.set_pwm(0,0,100)
 
     def rightthighY(self,degrees):
         if degrees == 0:
