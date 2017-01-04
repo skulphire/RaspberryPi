@@ -8,12 +8,7 @@ from drivers.mpu6050.mpudata import MpuData
 
 if __name__ == '__main__':
    position = Pos()
-   position.initial()
-   position.lookRight()
-   time.sleep(1)
-   position.lookLeft()
-   time.sleep(1)
-   position.lookForward()
+   position.new()
    time.sleep(2)
    position.stop()
 

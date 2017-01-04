@@ -19,3 +19,8 @@ class Body(object):
             self.bpwm.set_pwm(15,0,350)
         elif degrees == 45:
             self.bpwm.set_pwm(15,0,450)
+
+    def leftThighX(self,degrees):
+        if degrees == 0:
+            self.bpwm.set_pwm(14,0,150)
+
