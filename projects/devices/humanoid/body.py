@@ -40,4 +40,4 @@ class Body(object):
             self.bpwm.set_pwm(0,0,100)
     def rightthighY(self,degrees):
         if degrees == 0:
-            self.bpwm.set_pwm(5,0,100)
+            self.bpwm.set_pwm(5,0,600)
