@@ -30,4 +30,4 @@ class Body(object):
         if degrees == 0:
             self.bpwm.set_pwm(13,0,200)
         elif degrees == 180:
-            self.bpwm.set_pwm(13,0,500)
+            self.bpwm.set_pwm(13,0,550)
