@@ -47,3 +47,4 @@ class Pos(object):
 
     def new(self):
         self.body.lefthip(0)
+        self.body.righthip(0)
