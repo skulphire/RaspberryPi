@@ -10,7 +10,7 @@ class Pos(object):
         #time.sleep(0.3)
 
     def stop(self):
-        time.sleep(3)
+        #time.sleep(3)
         self.arm.servosOff()
 
     def initial(self):
