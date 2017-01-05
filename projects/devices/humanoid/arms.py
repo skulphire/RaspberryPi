@@ -58,7 +58,7 @@ class Arms(object):
         else:
             if degrees % 5 == 0:
                 pulse = (degrees * 2.5) + 100
-                int(pulse)
+                pulse = int(pulse)
                 if speed == 4:
                     for x in range(0,pulse,50):
                         self.tpwm.set_pwm(3,0,x)
