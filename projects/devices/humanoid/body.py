@@ -48,7 +48,7 @@ class Body(object):
         if degrees == 0:
             self.bpwm.set_pwm(1,0,150)
         elif degrees == 180:
-            self.bpwm.set_pwm(1,0,600)
+            self.bpwm.set_pwm(1,0,650)
 
     def righthip(self,degrees):
         if degrees ==0:
