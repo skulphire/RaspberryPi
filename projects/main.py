@@ -13,6 +13,10 @@ if __name__ == '__main__':
    #position.new()
    arm.testerRightShoulder(180,4)
    arm.testerRightShoulder(90, 4)
+   arm.testerRightShoulder(60, 4)
+   arm.testerRightShoulder(150, 4)
+   arm.testerRightShoulder(20, 4)
+
    time.sleep(5)
    position.stop()
 
