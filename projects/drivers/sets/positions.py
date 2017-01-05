@@ -16,6 +16,7 @@ class Pos(object):
 
     def reset(self):
         self.arm.resetPulse()
+
     def initial(self):
         # standard position:
         self.arm.leftShoulder(0)
