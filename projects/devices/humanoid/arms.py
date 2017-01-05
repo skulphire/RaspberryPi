@@ -56,7 +56,10 @@ class Arms(object):
         elif degrees == 0 & speed ==0:
             self.tpwm.set_pwm(3, 0, 100)
         else:
-            self.tpwm.set_pwm(3,0,1000)
+            count = 50
+            for x in range(0,speed):
+                self.tpwm.set_pwm(3,0,count)
+                count = count+10
 
     def rightElbow(self, degrees):
         if degrees == 180:
