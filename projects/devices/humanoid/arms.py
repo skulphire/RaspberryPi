@@ -73,7 +73,7 @@ class Arms(object):
                 if speed == 4:
                     for x in range(self.trsLastPulse,End,to):
                         self.tpwm.set_pwm(3,0,x)
-                        time.sleep(0.05)
+                        time.sleep(0.2)
                         print(x)
         self.trsLastPulse = pulse
 
