@@ -147,7 +147,7 @@ class Arms(object):
             if degrees % 5 == 0:
                 pulse = (degrees * 2.5) + 100
                 pulse = int(pulse)
-                if pulse < self.lhLastPulse():
+                if pulse < self.lhLastPulse:
                     End = pulse - 1
                     to = -25
                 else:
