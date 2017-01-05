@@ -48,6 +48,4 @@ class Pos(object):
         self.body.waist(45)
 
     def new(self):
-        self.arm.testerRightShoulder(60,4)
-        time.sleep(1)
-        self.arm.testerRightShoulder(45,4)
+        self.arm.testerRightShoulder(150,4)
