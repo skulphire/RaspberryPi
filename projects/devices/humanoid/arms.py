@@ -62,6 +62,7 @@ class Arms(object):
                 if speed == 4:
                     for x in range(0,pulse,50):
                         self.tpwm.set_pwm(3,0,x)
+                        time.sleep(0.05)
 
 
     def rightElbow(self, degrees):
