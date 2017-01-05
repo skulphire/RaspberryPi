@@ -17,11 +17,11 @@ class Pos(object):
         # standard position:
         self.arm.leftShoulder(120,5)
         self.arm.leftElbow(135,5)
-        self.arm.leftHand(135,5)
+        self.arm.leftHand(180,5)
 
         self.arm.rightShoulder(60,5)
         self.arm.rightElbow(45,5)
-        self.arm.rightHand(45,5)
+        self.arm.rightHand(0,5)
 
         self.body.waist(45)
         self.body.leftThighX(30)
