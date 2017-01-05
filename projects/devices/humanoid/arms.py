@@ -12,8 +12,6 @@ class Arms(object):
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
         self.trsLastPulse = 0
-    def resetPulse(self):
-        self.trsLastPulse = 0
 
     def servosOff(self):
         self.tpwm.set_all_pwm(0,0)
@@ -67,7 +65,7 @@ class Arms(object):
                 pulse = int(pulse)
                 print(pulse)
                 if speed == 4:
-                    for x in range(0,pulse+1,50):
+                    for x in range(self.trsLastPulse,pulse+1,50):
                         self.tpwm.set_pwm(3,self.trsLastPulse,x)
                         time.sleep(0.5)
                         print(x)
