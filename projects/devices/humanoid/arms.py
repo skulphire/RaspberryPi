@@ -49,18 +49,19 @@ class Arms(object):
             self.tpwm.set_pwm(3, 0, 100)
 
     def testerRightShoulder(self, degrees, speed):
-        if degrees == 180 & speed ==0:
+        if degrees == 180 & speed ==5:
             self.tpwm.set_pwm(3, 0, 550)
-        elif degrees == 90 & speed ==0:
+        elif degrees == 90 & speed ==5:
             self.tpwm.set_pwm(3,0,330)
-        elif degrees == 0 & speed ==0:
+        elif degrees == 0 & speed ==5:
             self.tpwm.set_pwm(3, 0, 100)
         else:
-            count = 50
-            for x in range(0,speed):
-                self.tpwm.set_pwm(3,0,count)
-                count = count+10
-                time.sleep(0.05)
+            if degrees % 5 == 0:
+                pulse = (degrees * 2.5) + 100
+                if speed == 4:
+                    for x in range(0,pulse,50):
+                        self.tpwm.set_pwm(3,0,x)
+
 
     def rightElbow(self, degrees):
         if degrees == 180:
