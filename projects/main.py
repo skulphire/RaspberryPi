@@ -10,14 +10,7 @@ from drivers.mpu6050.mpudata import MpuData
 if __name__ == '__main__':
    position = Pos()
    arm = Arms()
-   #position.new()
-   for x in range(0,6):
-      arm.testerRightShoulder(180,5)
-      arm.testerRightShoulder(150, 4)
-
-   time.sleep(.5)
-   arm.testerRightShoulder(0, 5)
-
+   position.initial()
    time.sleep(5)
    position.stop()
 
