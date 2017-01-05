@@ -11,6 +11,7 @@ class Arms(object):
 
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
+        self.trsLastPulse
 
     def resetPulse(self):
         self.trsLastPulse = 0
