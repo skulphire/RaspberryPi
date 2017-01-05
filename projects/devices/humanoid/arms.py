@@ -11,7 +11,7 @@ class Arms(object):
 
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
-        self.trsLastPulse = self
+        self.trsLastPulse = 0
     def resetPulse(self):
         self.trsLastPulse = 0
 
@@ -61,6 +61,7 @@ class Arms(object):
         elif degrees == 0 & speed ==5:
             self.tpwm.set_pwm(3, 0, 100)
         else:
+            print("last ",self.trsLastPulse)
             if degrees % 5 == 0:
                 pulse = (degrees * 2.5) + 100
                 pulse = int(pulse)
