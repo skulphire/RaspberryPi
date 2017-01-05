@@ -59,11 +59,12 @@ class Arms(object):
             if degrees % 5 == 0:
                 pulse = (degrees * 2.5) + 100
                 pulse = int(pulse)
+                print(pulse)
                 if speed == 4:
                     for x in range(0,pulse,50):
                         self.tpwm.set_pwm(3,0,x)
                         time.sleep(0.1)
-                        print(pulse)
+                        print(x)
 
 
     def rightElbow(self, degrees):
