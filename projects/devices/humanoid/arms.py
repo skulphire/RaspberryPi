@@ -316,7 +316,7 @@ class Arms(object):
         if speed == 5:
             #print("last ", self.trsLastPulse)
             if degrees % 5 == 0:
-                pulse = (degrees * 2.5) + 150
+                pulse = (degrees * 2.5) + 140
                 pulse = int(pulse)
                 if pulse < self.rhLastPulse:
                     End = pulse - 1
@@ -335,7 +335,7 @@ class Arms(object):
         elif speed == 4:
             #print("last ",self.trsLastPulse)
             if degrees % 5 == 0:
-                pulse = (degrees * 2.5) + 150
+                pulse = (degrees * 2.5) + 140
                 pulse = int(pulse)
                 if pulse < self.rhLastPulse:
                     End = pulse - 1
@@ -353,7 +353,7 @@ class Arms(object):
         elif speed == 3:
             #print("last ",self.trsLastPulse)
             if degrees % 5 == 0:
-                pulse = (degrees * 2.5) + 150
+                pulse = (degrees * 2.5) + 140
                 pulse = int(pulse)
                 if pulse < self.rhLastPulse:
                     End = pulse - 1
