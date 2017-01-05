@@ -34,10 +34,10 @@ class Arms(object):
                 pulse = int(pulse)
                 if pulse < self.lsLastPulse:
                     End = pulse - 1
-                    to = -25
+                    to = 25
                 else:
                     End = pulse + 1
-                    to = 25
+                    to = -25
              #   print("end ", End)
 
                 for x in range(self.lsLastPulse, End, to):
@@ -53,10 +53,10 @@ class Arms(object):
                 pulse = int(pulse)
                 if pulse < self.lsLastPulse:
                     End = pulse - 1
-                    to = -25
+                    to = 25
                 else:
                     End = pulse + 1
-                    to = 25
+                    to = -25
             #    print("end ",End)
                 for x in range(self.lsLastPulse, End, to):
                     self.tpwm.set_pwm(0,0,x)
@@ -71,10 +71,10 @@ class Arms(object):
                 pulse = int(pulse)
                 if pulse < self.lsLastPulse:
                     End = pulse - 1
-                    to = -25
+                    to = 25
                 else:
                     End = pulse + 1
-                    to = 25
+                    to = -25
                 #print("end ",End)
                 for x in range(self.lsLastPulse, End, to):
                     self.tpwm.set_pwm(0,0,x)
