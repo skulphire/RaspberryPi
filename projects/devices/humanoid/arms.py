@@ -63,7 +63,7 @@ class Arms(object):
             if degrees % 5 == 0:
                 pulse = (degrees * 2.5) + 100
                 pulse = int(pulse)
-                End = pulse+1+self.trsLastPulse
+                End = pulse+1#+self.trsLastPulse
                 print(End)
                 if speed == 4:
                     for x in range(self.trsLastPulse,End,50):
