@@ -51,14 +51,25 @@ class Arms(object):
             self.tpwm.set_pwm(3, 0, 100)
 
     def testerRightShoulder(self, degrees, speed):
-
-        if degrees == 180 & speed ==5:
-            self.tpwm.set_pwm(3, 0, 550)
-        elif degrees == 90 & speed ==5:
-            self.tpwm.set_pwm(3,0,330)
-        elif degrees == 0 & speed ==5:
-            self.tpwm.set_pwm(3, 0, 100)
-        else:
+        if speed == 5:
+            print("last ", self.trsLastPulse)
+            if degrees % 5 == 0:
+                pulse = (degrees * 2.5) + 100
+                pulse = int(pulse)
+                if pulse < self.trsLastPulse:
+                    End = pulse - 1
+                    to = -25
+                else:
+                    End = pulse + 1
+                    to = 25
+                print("end ", End)
+                if speed == 4:
+                    for x in range(self.trsLastPulse, End, to):
+                        self.tpwm.set_pwm(3, 0, x)
+                        #time.sleep(0.08)
+                        print(x)
+            self.trsLastPulse = pulse
+        elif speed == 4:
             print("last ",self.trsLastPulse)
             if degrees % 5 == 0:
                 pulse = (degrees * 2.5) + 100
@@ -75,7 +86,7 @@ class Arms(object):
                         self.tpwm.set_pwm(3,0,x)
                         time.sleep(0.08)
                         print(x)
-        self.trsLastPulse = pulse
+            self.trsLastPulse = pulse
 
     def rightElbow(self, degrees):
         if degrees == 180:
