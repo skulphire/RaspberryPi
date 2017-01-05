@@ -63,16 +63,17 @@ class Arms(object):
             if degrees % 5 == 0:
                 pulse = (degrees * 2.5) + 100
                 pulse = int(pulse)
-                End = pulse+1
+                if pulse < self.trsLastPulse:
+                    End = pulse - 1
+                    to = -25
+                else:
+                    End = pulse + 1
+                    to = 25
                 print("end ",End)
                 if speed == 4:
-                    if pulse < self.trsLastPulse:
-                        to = -25
-                    else:
-                        to = 25
                     for x in range(self.trsLastPulse,End,to):
                         self.tpwm.set_pwm(3,0,x)
-                        time.sleep(0.5)
+                        time.sleep(0.05)
                         print(x)
         self.trsLastPulse = pulse
 
