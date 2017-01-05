@@ -10,8 +10,10 @@ from drivers.mpu6050.mpudata import MpuData
 if __name__ == '__main__':
    position = Pos()
    arm = Arms()
-   position.initial()
-   time.sleep(5)
+   #position.initial()
+   for x in range(0,9):
+      position.new()
+   time.sleep(3)
    position.stop()
 
 

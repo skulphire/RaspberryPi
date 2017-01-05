@@ -46,3 +46,8 @@ class Pos(object):
 
     def lookForward(self):
         self.body.waist(45)
+    def new(self):
+        self.arm.leftShoulder(180,5)
+        self.arm.rightShoulder(0,5)
+        self.arm.leftShoulder(120, 5)
+        self.arm.rightShoulder(60, 5)
