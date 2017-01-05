@@ -12,6 +12,9 @@ class Arms(object):
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
 
+    def resetPulse(self):
+        self.trsLastPulse = 0
+
     def servosOff(self):
         self.tpwm.set_all_pwm(0,0)
         self.bpwm.set_all_pwm(0,0)
@@ -41,6 +44,7 @@ class Arms(object):
 
     #RIGHT ARM
     def rightShoulder(self, degrees):
+
         if degrees == 180:
             self.tpwm.set_pwm(3, 0, 550)
         elif degrees == 90:
@@ -49,6 +53,7 @@ class Arms(object):
             self.tpwm.set_pwm(3, 0, 100)
 
     def testerRightShoulder(self, degrees, speed):
+
         if degrees == 180 & speed ==5:
             self.tpwm.set_pwm(3, 0, 550)
         elif degrees == 90 & speed ==5:
@@ -62,10 +67,10 @@ class Arms(object):
                 print(pulse)
                 if speed == 4:
                     for x in range(0,pulse+1,50):
-                        self.tpwm.set_pwm(3,0,x)
+                        self.tpwm.set_pwm(3,self.trsLastPulse,x)
                         time.sleep(0.5)
                         print(x)
-
+        self.trsLastPulse = pulse
 
     def rightElbow(self, degrees):
         if degrees == 180:
