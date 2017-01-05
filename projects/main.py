@@ -13,7 +13,7 @@ if __name__ == '__main__':
    #position.new()
    for x in range(0,6):
       arm.testerRightShoulder(180,5)
-      arm.testerRightShoulder(120, 5)
+      arm.testerRightShoulder(160, 5)
    time.sleep(.5)
    arm.testerRightShoulder(0, 5)
 
