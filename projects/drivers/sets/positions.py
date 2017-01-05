@@ -49,3 +49,5 @@ class Pos(object):
 
     def new(self):
         self.arm.testerRightShoulder(60,4)
+        time.sleep(1)
+        self.arm.testerRightShoulder(45,4)
