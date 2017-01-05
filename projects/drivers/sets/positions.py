@@ -16,7 +16,7 @@ class Pos(object):
     def initial(self):
         # standard position:
         self.arm.leftShoulder(180,4)
-        self.arm.leftElbow(0,4)
+        self.arm.leftElbow(180,4)
         self.arm.leftHand(90,4)
 
         self.arm.rightShoulder(0,4)
