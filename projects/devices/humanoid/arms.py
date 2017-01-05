@@ -60,7 +60,7 @@ class Arms(object):
             for x in range(0,speed):
                 self.tpwm.set_pwm(3,0,count)
                 count = count+10
-                time.sleep(0.02)
+                time.sleep(0.05)
 
     def rightElbow(self, degrees):
         if degrees == 180:
