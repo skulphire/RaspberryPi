@@ -67,9 +67,9 @@ class Arms(object):
                 print("end ",End)
                 if speed == 4:
                     if pulse < self.trsLastPulse:
-                        to = -50
+                        to = -25
                     else:
-                        to = 50
+                        to = 25
                     for x in range(self.trsLastPulse,End,to):
                         self.tpwm.set_pwm(3,0,x)
                         time.sleep(0.5)
