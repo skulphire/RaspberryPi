@@ -12,12 +12,10 @@ if __name__ == '__main__':
    arm = Arms()
    #position.new()
 
-   arm.testerRightShoulder(180,4)
-   arm.testerRightShoulder(90, 4)
-   arm.testerRightShoulder(60, 4)
-   arm.testerRightShoulder(150, 4)
-   arm.testerRightShoulder(20, 4)
-   arm.testerRightShoulder(0, 4)
+   arm.testerRightShoulder(180,5)
+   arm.testerRightShoulder(75, 5)
+   arm.testerRightShoulder(150, 5)
+   arm.testerRightShoulder(0, 5)
 
    time.sleep(5)
    position.stop()
