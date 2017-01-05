@@ -61,7 +61,7 @@ class Arms(object):
                 pulse = int(pulse)
                 print(pulse)
                 if speed == 4:
-                    for x in range(0,pulse,50):
+                    for x in range(0,pulse+1,50):
                         self.tpwm.set_pwm(3,0,x)
                         time.sleep(0.1)
                         print(x)
