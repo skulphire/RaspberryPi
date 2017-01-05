@@ -50,6 +50,7 @@ class Body(object):
         elif degrees == 180:
             self.bpwm.set_pwm(1,0,650)
 
+
     def righthip(self,degrees):
         if degrees ==0:
             self.bpwm.set_pwm(6,0,500)
