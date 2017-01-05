@@ -63,6 +63,7 @@ class Arms(object):
                     for x in range(0,pulse,50):
                         self.tpwm.set_pwm(3,0,x)
                         time.sleep(0.1)
+                        print(pulse)
 
 
     def rightElbow(self, degrees):
