@@ -367,3 +367,7 @@ class Arms(object):
                     time.sleep(0.12)
               #      print(x)
             self.rhLastPulse = pulse
+
+    def neww(self):
+        self.tpwm.set_pwm(0,0,300)
+        self.tpwm.set_pwm(1,0,300)
