@@ -29,6 +29,9 @@ class RunServos(object):
             for x in range(0,maxlist):
                 pwm.set_pwm(channels[0],0,pulseDict[channels[0]][x])
         elif commands == 2:
-            for x in range(0,maxlist):
-                pwm.set_pwm(channels[0],0,pulseDict[channels[0]][x])
-                pwm.set_pwm(channels[1], 0, pulseDict[channels[1]][x])
+            try:
+                for x in range(0,maxlist):
+                    pwm.set_pwm(channels[0],0,pulseDict[channels[0]][x])
+                    pwm.set_pwm(channels[1], 0, pulseDict[channels[1]][x])
+            except IndexError:
+                pass
