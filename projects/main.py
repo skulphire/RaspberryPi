@@ -9,7 +9,7 @@ from drivers.servos.positions import Pos
 if __name__ == '__main__':
    position = Pos()
    arm = Arms()
-   arm.leftShoulder(180,5)
+   arm.leftShoulder(45,5)
    #position.initial()
    time.sleep(3)
    position.stop()
