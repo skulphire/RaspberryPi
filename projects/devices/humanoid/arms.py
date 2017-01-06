@@ -49,64 +49,25 @@ class Arms(object):
                 self.pulsesDict[0].append(x)
             self.channels.append(0)
             self.lsLastPulse = pulse
-            self.execute.servos(speed,self.pulsesDict,self.channels,2,step)
+            self.execute.servos(speed,self.pulsesDict,self.channels,2)
 
     def leftElbow(self, degrees,speed):
         #600-150
-        if speed == 5:
-           # print("last ", self.leLastPulse)
-            if degrees % 5 == 0:
-                pulse = (degrees * 2.5) + 150
-                pulse = int(pulse)
-                if pulse < self.leLastPulse:
-                    End = pulse - 1
-                    to = -25
-                else:
-                    End = pulse + 1
-                    to = 25
-            #    print("end ", End)
-
-                for x in range(self.leLastPulse, End, to):
-                    self.tpwm.set_pwm(1, 0, x)
-                    time.sleep(0.02)
-             #       print(x)
+        if degrees % 5 == 0:
+            pulse = (degrees * 2.5) + 150
+            pulse = int(pulse)
+            if pulse < self.leLastPulse:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+                self.pulsesDict.setdefault(1, [])
+                self.channels.append(1)
+            for x in range(self.leLastPulse, End, step):
+                self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
-
-        elif speed == 4:
-            #print("last ", self.leLastPulse)
-            if degrees % 5 == 0:
-                pulse = (degrees * 2.5) + 150
-                pulse = int(pulse)
-                if pulse < self.leLastPulse:
-                    End = pulse - 1
-                    to = -25
-                else:
-                    End = pulse + 1
-                    to = 25
-             #   print("end ",End)
-                for x in range(self.leLastPulse, End, to):
-                    self.tpwm.set_pwm(1,0,x)
-                    time.sleep(0.08)
-              #      print(x)
-            self.leLastPulse = pulse
-
-        elif speed == 3:
-            #print("last ", self.rsLastPulse)
-            if degrees % 5 == 0:
-                pulse = (degrees * 2.5) + 150
-                pulse = int(pulse)
-                if pulse < self.leLastPulse:
-                    End = pulse - 1
-                    to = -25
-                else:
-                    End = pulse + 1
-                    to = 25
-                #print("end ",End)
-                for x in range(self.leLastPulse, End, to):
-                    self.tpwm.set_pwm(1,0,x)
-                    time.sleep(0.12)
-                    #print(x)
-            self.leLastPulse = pulse
+            self.execute.servos(speed, self.pulsesDict, self.channels, 2)
 
     def leftHand(self, degrees, speed):
         #570-100

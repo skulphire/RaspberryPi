@@ -16,7 +16,7 @@ class RunServos(object):
         #self.arm = Arms()
         #self.body = Body()
 
-    def servos(self ,speed, pulseDict, channels,controller, to):
+    def servos(self ,speed, pulseDict, channels,controller):
         commands = len(channels)
         if controller == 1:
             pwm = self.bpwm
@@ -28,3 +28,7 @@ class RunServos(object):
         if commands == 1:
             for x in range(0,maxlist):
                 pwm.set_pwm(channels[0],0,pulseDict[channels[0]][x])
+        elif commands == 2:
+            for x in range(0,maxlist):
+                pwm.set_pwm(channels[0],0,pulseDict[channels[0]][x])
+                pwm.set_pwm(channels[1], 0, pulseDict[channels[1]][x])
