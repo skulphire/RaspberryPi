@@ -16,12 +16,15 @@ class RunServos(object):
         self.arm = Arms()
         self.body = Body()
 
-    def servos(self ,speed, pulses, channels,controller, to):
+    def servos(self ,speed, pulseDict, channels,controller, to):
         commands = len(channels)
         if controller == 1:
             pwm = self.bpwm
         elif controller == 2:
             pwm = self.tpwm
-
+        #finds the biggest list in the dictionary
+        maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
+        maxlist = len(pulseDict[maxkey])
         if commands == 1:
-            pwm.set_pwm(channels(0),0,)
+            for x in range(0,maxlist):
+                pwm.set_pwm(channels[0],0,pulseDict[channels[0]][x])
