@@ -1,6 +1,7 @@
 from __future__ import division
 import time
 import Adafruit_PCA9685.PCA9685
+from drivers.servos.runservos import RunServos
 
 class Arms(object):
     def __init__(self):
@@ -12,6 +13,8 @@ class Arms(object):
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
 
+        self.execute = RunServos()
+
         self.lsLastPulse = 0
         self.leLastPulse = 0
         self.lhLastPulse = 0
@@ -20,6 +23,8 @@ class Arms(object):
         self.reLastPulse = 0
         self.rhLastPulse = 0
 
+        self.pulses = []
+        self.channels = []
 
     def servosOff(self):
         self.tpwm.set_all_pwm(0,0)
@@ -38,7 +43,9 @@ class Arms(object):
                 else:
                     End = pulse + 1
                     to = 25
-             #   print("end ", End)
+
+                self.pulses.append(End)
+                self.channels.append(0)
 
                 for x in range(self.lsLastPulse, End, to):
                     self.tpwm.set_pwm(0, 0, x)
@@ -367,7 +374,3 @@ class Arms(object):
                     time.sleep(0.12)
               #      print(x)
             self.rhLastPulse = pulse
-
-    def neww(self):
-        self.tpwm.set_pwm(0,0,300)
-        self.tpwm.set_pwm(1,0,300)
