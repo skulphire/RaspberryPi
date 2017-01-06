@@ -35,7 +35,7 @@ class RunServos(object):
                 except:
                     pass
                 try:
-                    p2 = pulseDict[channels[1]][x]
+                    p2 = pulseDict[channels[0]][x]
                 except:
                     pass
                 pwm.set_pwm(channels[0],0,p1)
