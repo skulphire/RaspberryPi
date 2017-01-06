@@ -12,12 +12,12 @@ class RunServos(object):
         self.bpwm = Adafruit_PCA9685.PCA9685(0x40)
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
-
+        self.channels = []
         #self.arm = Arms()
         #self.body = Body()
 
-    def servos(self ,speed, pulseDict, channels,controller):
-        commands = len(channels)
+    def servos(self ,speed, pulseDict,controller):
+        commands = len(self.channels)
         if controller == 1:
             pwm = self.bpwm
         elif controller == 2:
@@ -27,17 +27,18 @@ class RunServos(object):
         maxlist = len(pulseDict[maxkey])
         if commands == 1:
             for x in range(0,maxlist):
-                pwm.set_pwm(channels[0],0,pulseDict[channels[0]][x])
+                pwm.set_pwm(self.channels[0],0,pulseDict[self.channels[0]][x])
         elif commands == 2:
             for x in range(0,maxlist):
                 try:
-                    p1 = pulseDict[channels[0]][x]
+                    p1 = pulseDict[self.channels[0]][x]
                 except:
                     pass
                 try:
-                    p2 = pulseDict[channels[0]][x]
+                    p2 = pulseDict[self.channels[0]][x]
                 except:
                     pass
-                pwm.set_pwm(channels[0],0,p1)
-                pwm.set_pwm(channels[1], 0, p2)
+                pwm.set_pwm(self.channels[0],0,p1)
+                pwm.set_pwm(self.channels[1], 0, p2)
 
+        self.channels = []

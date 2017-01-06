@@ -23,7 +23,7 @@ class Arms(object):
         self.reLastPulse = 0
         self.rhLastPulse = 0
 
-        self.channels = []
+        self.execute.channels = []
         self.pulsesDict = {}
 
     def servosOff(self):
@@ -47,9 +47,9 @@ class Arms(object):
             self.pulsesDict.setdefault(0,[])
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
-            self.channels.append(0)
+            self.execute.channels.append(0)
             self.lsLastPulse = pulse
-            self.execute.servos(speed,self.pulsesDict,self.channels,2)
+            self.execute.servos(speed,self.pulsesDict, 2)
 
     def leftElbow(self, degrees,speed):
         #600-150
@@ -63,11 +63,11 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
                 self.pulsesDict.setdefault(1, [])
-                self.channels.append(1)
+                self.execute.channels.append(1)
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
-            self.execute.servos(speed, self.pulsesDict, self.channels, 2)
+            self.execute.servos(speed, self.pulsesDict, 2)
 
     def leftHand(self, degrees, speed):
         #570-100
