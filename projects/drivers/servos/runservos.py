@@ -1,8 +1,8 @@
 from __future__ import division
 import time
 import Adafruit_PCA9685.PCA9685
-from devices.humanoid.arms import Arms
-from devices.humanoid.body import Body
+#from devices.humanoid.arms import Arms
+#from devices.humanoid.body import Body
 
 class RunServos(object):
     def __init__(self):
@@ -13,8 +13,8 @@ class RunServos(object):
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
 
-        self.arm = Arms()
-        self.body = Body()
+        #self.arm = Arms()
+        #self.body = Body()
 
     def servos(self ,speed, pulseDict, channels,controller, to):
         commands = len(channels)
