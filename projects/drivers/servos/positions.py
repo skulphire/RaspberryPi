@@ -27,7 +27,7 @@ class Pos(object):
         global CHANNELS
         del CHANNELS[:]
         CHANNELS = []
-        print(CHANNELS)
+        print(len(CHANNELS))
         global CONTROLLER
         del CONTROLLER[:]
         CONTROLLER = []
