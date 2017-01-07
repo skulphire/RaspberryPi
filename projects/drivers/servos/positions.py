@@ -9,7 +9,6 @@ class Pos(object):
         self.arm = Arms()
         self.body = Body()
         self.execute = RunServos()
-
         #time.sleep(0.3)
 
     def commit(self):
@@ -19,9 +18,10 @@ class Pos(object):
         self.arm.rsLastPulse,
         self.arm.reLastPulse,
         self.arm.rhLastPulse]
-
+        print("before: ",len(self.execute.channels))
         self.execute.servos(self.arm.pulsesDict,lastpulses)
         self.arm.pulsesDict.clear()
+        print("after: ", len(self.execute.channels))
 
     def stop(self):
         #time.sleep(3)

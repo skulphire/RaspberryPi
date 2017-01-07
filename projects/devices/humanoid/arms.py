@@ -49,7 +49,6 @@ class Arms(object):
             self.execute.channels.append(0)
             self.lsLastPulse = pulse
             self.execute.controller.append(2)
-            print(len(self.execute.channels))
             #self.execute.servos(speed,self.pulsesDict, 2)
 
     def leftElbow(self, degrees,speed):
