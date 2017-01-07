@@ -31,7 +31,7 @@ class Pos(object):
         self.arm.leftShoulder(45,5)
         self.arm.leftElbow(135,5)
         self.arm.leftHand(180,5)
-
+        print(len(self.execute.channels))
         #self.arm.rightShoulder(0,5)
         #self.arm.rightElbow(135,5)
         #self.arm.rightHand(180,5)
