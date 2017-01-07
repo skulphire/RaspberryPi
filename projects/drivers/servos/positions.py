@@ -84,6 +84,7 @@ class Pos(object):
         self.body.waist(90)
         self.body.rightThighX(150)
         self.body.rightthighY(180)
+        self.body.righthip(180)
         self.commit()
 
 
@@ -92,7 +93,7 @@ class Pos(object):
         #self.body.leftthighY(0)
 
         #self.body.lefthip(0)
-        #self.body.righthip(0)
+
 
     #method for falling backwards
     def fallingBack(self):
