@@ -2,6 +2,5 @@
 
 
 CHANNELS = []
-del CHANNELS[:]
 CONTROLLER = []
 
