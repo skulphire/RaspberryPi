@@ -71,17 +71,17 @@ class Arms(object):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) + 130
             pulse = int(pulse)
-            if pulse < self.leLastPulse:
+            if pulse < self.lhLastPulse:
                 End = pulse - 1
                 step = -25
             else:
                 End = pulse + 1
                 step = 25
-                self.pulsesDict = {2:[]}
+                self.pulsesDict.setdefault(2, [])
                 self.execute.channels.append(2)
-            for x in range(self.leLastPulse, End, step):
+            for x in range(self.lhLastPulse, End, step):
                 self.pulsesDict[2].append(x)
-            self.leLastPulse = pulse
+            self.lhLastPulse = pulse
             self.execute.servos(speed, self.pulsesDict, 2)
 
     #RIGHT ARM
@@ -89,7 +89,7 @@ class Arms(object):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) + 100
             pulse = int(pulse)
-            if pulse < self.leLastPulse:
+            if pulse < self.rsLastPulse:
                 End = pulse - 1
                 step = -25
             else:
@@ -97,16 +97,16 @@ class Arms(object):
                 step = 25
                 self.pulsesDict.setdefault(3, [])
                 self.execute.channels.append(3)
-            for x in range(self.leLastPulse, End, step):
+            for x in range(self.rsLastPulse, End, step):
                 self.pulsesDict[3].append(x)
-            self.leLastPulse = pulse
+            self.rsLastPulse = pulse
             self.execute.servos(speed, self.pulsesDict, 2)
 
     def rightElbow(self, degrees, speed):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) + 100
             pulse = int(pulse)
-            if pulse < self.leLastPulse:
+            if pulse < self.reLastPulse:
                 End = pulse - 1
                 step = -25
             else:
@@ -114,16 +114,16 @@ class Arms(object):
                 step = 25
                 self.pulsesDict.setdefault(4, [])
                 self.execute.channels.append(4)
-            for x in range(self.leLastPulse, End, step):
+            for x in range(self.reLastPulse, End, step):
                 self.pulsesDict[4].append(x)
-            self.leLastPulse = pulse
+            self.reLastPulse = pulse
             self.execute.servos(speed, self.pulsesDict, 2)
 
     def rightHand(self, degrees, speed):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) + 130
             pulse = int(pulse)
-            if pulse < self.leLastPulse:
+            if pulse < self.rhLastPulse:
                 End = pulse - 1
                 step = -25
             else:
@@ -131,7 +131,7 @@ class Arms(object):
                 step = 25
                 self.pulsesDict.setdefault(5, [])
                 self.execute.channels.append(5)
-            for x in range(self.leLastPulse, End, step):
+            for x in range(self.rhLastPulse, End, step):
                 self.pulsesDict[5].append(x)
-            self.leLastPulse = pulse
+            self.rhLastPulse = pulse
             self.execute.servos(speed, self.pulsesDict, 2)
