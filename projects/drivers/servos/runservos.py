@@ -30,7 +30,7 @@ class RunServos(object):
     def dopwm(self,x,pulseDict,lastpulsestop):
         for i in range(0,self.commands):
             pwm = self.checkpwm()
-            pwm.set_pwm(CONTROLLER[i], 0, self.testlist(x, pulseDict, CONTROLLER[i], lastpulsestop))
+            pwm.set_pwm(CHANNELS[i], 0, self.testlist(x, pulseDict, CHANNELS[i], lastpulsestop))
 
     def checkpwm(self):
         if self.c < self.commands:
@@ -50,7 +50,7 @@ class RunServos(object):
 
     def servos(self, pulseDict, lastpulsestop):
         self.c = 0
-        self.commands = len(CONTROLLER)
+        self.commands = len(CHANNELS)
         print(self.commands)
         #finds the biggest list in the dictionary
         maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
