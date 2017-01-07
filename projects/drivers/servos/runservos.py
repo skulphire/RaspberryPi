@@ -50,11 +50,12 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
         elif self.commands == 3:
             for x in range(0, maxlist):
-                if self.controller[c] == 1:
-                    pwm = self.bpwm
-                elif self.controller[c] == 2:
-                    pwm = self.tpwm
-                c = c + 1
+                while c < self.commands:
+                    if self.controller[c] == 1:
+                        pwm = self.bpwm
+                    elif self.controller[c] == 2:
+                        pwm = self.tpwm
+                    c = c + 1
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
