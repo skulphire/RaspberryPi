@@ -14,6 +14,7 @@ class RunServos(object):
         self.channels = []
         self.controller = []
         self.commands = 0
+        self.c = 0
 
     def testlist(self,x, pulseDict, channel, lastpulsetop):
         try:
@@ -23,9 +24,16 @@ class RunServos(object):
             pulse = lastpulsetop[channel]
             pass
         return pulse
+    def checkpwm(self,c):
+        if self.controller[c] == 1:
+            pwm = self.bpwm
+        elif self.controller[c] == 2:
+            pwm = self.tpwm
+        self.c = self.c + 1
+        return pwm
 
     def servos(self, pulseDict, lastpulsestop):
-        c = 0
+        self.c=0
         self.commands = len(self.channels)
         print(self.commands)
         #finds the biggest list in the dictionary
@@ -33,69 +41,49 @@ class RunServos(object):
         maxlist = len(pulseDict[maxkey])
         if self.commands == 1:
             for x in range(0,maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
         elif self.commands == 2:
             for x in range(0,maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
         elif self.commands == 3:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
                 time.sleep(0.05)
         elif self.commands == 4:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
                 time.sleep(0.05)
         elif self.commands == 5:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
+                pwm = self.checkpwm(self.c)
                 pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
         elif self.commands == 6:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
@@ -105,12 +93,7 @@ class RunServos(object):
 
         elif self.commands == 7:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
@@ -120,12 +103,7 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
         elif self.commands == 8:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
@@ -136,12 +114,7 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[7], 0, self.testlist(x, pulseDict, self.channels[7], lastpulsestop))
         elif self.commands == 9:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
@@ -153,12 +126,7 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[8], 0, self.testlist(x, pulseDict, self.channels[8], lastpulsestop))
         elif self.commands == 10:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
@@ -171,12 +139,7 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[9], 0, self.testlist(x, pulseDict, self.channels[9], lastpulsestop))
         elif self.commands == 11:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
@@ -190,12 +153,7 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[10], 0, self.testlist(x, pulseDict, self.channels[10], lastpulsestop))
         elif self.commands == 12:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
@@ -210,12 +168,7 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[11], 0, self.testlist(x, pulseDict, self.channels[11], lastpulsestop))
         elif self.commands == 13:
             for x in range(0, maxlist):
-                while c < self.commands:
-                    if self.controller[c] == 1:
-                        pwm = self.bpwm
-                    elif self.controller[c] == 2:
-                        pwm = self.tpwm
-                    c = c + 1
+
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
