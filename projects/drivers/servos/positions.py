@@ -22,6 +22,7 @@ class Pos(object):
 
         self.execute.servos(self.arm.pulsesDict,lastpulses)
         self.arm.pulsesDict.clear()
+        self.arm.pulsesDict = {}
 
 
     def stop(self):

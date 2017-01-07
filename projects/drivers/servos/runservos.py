@@ -61,3 +61,6 @@ class RunServos(object):
         global CHANNELS
         del CHANNELS[:]
         CHANNELS = []
+        global CONTROLLER
+        del CONTROLLER[:]
+        CONTROLLER = []
