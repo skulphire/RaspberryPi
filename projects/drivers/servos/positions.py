@@ -42,24 +42,24 @@ class Pos(object):
         self.arm.rightElbow(90, 5)
         self.arm.rightHand(0, 5)
         self.commit()
+        for x in range(0,5):
+            self.arm.leftShoulder(180, 5)
+            self.arm.leftElbow(90, 5)
+            self.arm.leftHand(70, 5)
 
-        self.arm.leftShoulder(180, 5)
-        self.arm.leftElbow(90, 5)
-        self.arm.leftHand(70, 5)
+            self.arm.rightShoulder(0, 5)
+            self.arm.rightElbow(90, 5)
+            self.arm.rightHand(70, 5)
+            self.commit()
 
-        self.arm.rightShoulder(0, 5)
-        self.arm.rightElbow(90, 5)
-        self.arm.rightHand(70, 5)
-        self.commit()
+            self.arm.leftShoulder(180, 5)
+            self.arm.leftElbow(90, 5)
+            self.arm.leftHand(0, 5)
 
-        self.arm.leftShoulder(180, 5)
-        self.arm.leftElbow(90, 5)
-        self.arm.leftHand(0, 5)
-
-        self.arm.rightShoulder(0, 5)
-        self.arm.rightElbow(90, 5)
-        self.arm.rightHand(0, 5)
-        self.commit()
+            self.arm.rightShoulder(0, 5)
+            self.arm.rightElbow(90, 5)
+            self.arm.rightHand(0, 5)
+            self.commit()
 
     def initial(self):
         # standard position:
