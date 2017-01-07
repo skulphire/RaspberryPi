@@ -35,12 +35,12 @@ class Pos(object):
 
     def dance1(self):
         self.arm.leftShoulder(180, 5)
-        self.arm.leftElbow(90, 5)
-        self.arm.leftHand(0, 5)
+        self.arm.leftElbow(0, 5)
+        self.arm.leftHand(180, 5)
 
         self.arm.rightShoulder(0, 5)
-        self.arm.rightElbow(90, 5)
-        self.arm.rightHand(0, 5)
+        self.arm.rightElbow(0, 5)
+        self.arm.rightHand(180, 5)
         self.commit()
         time.sleep(.5)
 
