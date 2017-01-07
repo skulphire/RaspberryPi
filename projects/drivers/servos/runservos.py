@@ -11,7 +11,7 @@ class RunServos(object):
         self.bpwm = Adafruit_PCA9685.PCA9685(0x40)
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
-        self.channels = [0] * 32
+        self.channels = []
         self.commands = 0
         self.last = 0
 
@@ -151,3 +151,4 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[10], 0, self.testlist(x, pulseDict, self.channels[10]))
                 pwm.set_pwm(self.channels[11], 0, self.testlist(x, pulseDict, self.channels[11]))
                 pwm.set_pwm(self.channels[12], 0, self.testlist(x, pulseDict, self.channels[12]))
+        self.channels = []
