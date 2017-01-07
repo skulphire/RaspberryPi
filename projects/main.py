@@ -9,8 +9,8 @@ from drivers.servos.positions import Pos
 if __name__ == '__main__':
    position = Pos()
    arm = Arms()
-   arm.leftShoulder(0,5)
-   arm.leftElbow(0,5)
+   arm.leftShoulder(120,5)
+   arm.leftElbow(135,5)
    arm.leftHand(180, 5)
    arm.commit()
    #arm.rightShoulder(180,5)
