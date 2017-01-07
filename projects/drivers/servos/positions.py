@@ -44,17 +44,8 @@ class Pos(object):
         self.commit()
 
         self.arm.leftShoulder(180, 5)
-        self.arm.leftElbow(90, 5)
-        self.arm.leftHand(70, 5)
-
-        self.arm.rightShoulder(0, 5)
-        self.arm.rightElbow(90, 5)
-        self.arm.rightHand(70, 5)
-        self.commit()
-
-        self.arm.leftShoulder(180, 5)
         self.arm.leftElbow(0, 5)
-        self.arm.leftHand(90, 5)
+        self.arm.leftHand(180, 5)
 
         self.arm.rightShoulder(0, 5)
         self.arm.rightElbow(90, 5)
