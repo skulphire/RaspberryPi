@@ -56,6 +56,8 @@ class RunServos(object):
         #finds the biggest list in the dictionary
         maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
         maxlist = len(pulseDict[maxkey])
+        for x in range(0, maxlist):
+            self.dopwm(x, pulseDict, lastpulsestop)
         if self.commands == 1:
             for x in range(0,maxlist):
                 for x in range(0, maxlist):
@@ -77,6 +79,30 @@ class RunServos(object):
                 for x in range(0, maxlist):
                     self.dopwm(x, pulseDict, lastpulsestop)
         elif self.commands == 6:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 7:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 8:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 9:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 10:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 11:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 12:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 13:
+            for x in range(0, maxlist):
+                self.dopwm(x,pulseDict,lastpulsestop)
+        elif self.commands == 14:
             for x in range(0, maxlist):
                 self.dopwm(x,pulseDict,lastpulsestop)
 
