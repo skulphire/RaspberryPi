@@ -23,9 +23,11 @@ class Pos(object):
         self.execute.servos(self.arm.pulsesDict,lastpulses)
         global ARMPULSESDICT
         ARMPULSESDICT.clear()
+
         global CHANNELS
         del CHANNELS[:]
         CHANNELS = []
+        print(CHANNELS)
         global CONTROLLER
         del CONTROLLER[:]
         CONTROLLER = []
@@ -61,6 +63,7 @@ class Pos(object):
         self.arm.rightElbow(90, 5)
         self.arm.rightHand(0, 5)
         self.commit()
+
     def initial(self):
         # standard position:
         self.arm.leftShoulder(120,5)
