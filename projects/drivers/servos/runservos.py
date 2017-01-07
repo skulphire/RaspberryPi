@@ -1,7 +1,7 @@
 from __future__ import division
 import time
 import Adafruit_PCA9685.PCA9685
-from .helper import *
+from .helper import help
 
 
 class RunServos(object):
@@ -12,8 +12,8 @@ class RunServos(object):
         self.bpwm = Adafruit_PCA9685.PCA9685(0x40)
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
-        self.channels = channels[]
-        self.controller = controller[]
+        self.channels = help.channels
+        self.controller = help.controller
         self.commands = 0
         self.c = 0
 
