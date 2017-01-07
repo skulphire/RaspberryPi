@@ -21,20 +21,15 @@ class Pos(object):
         self.arm.rsLastPulse,
         self.arm.reLastPulse,
         self.arm.rhLastPulse]
-        self.execute.channels = CHANNELS
-        self.execute.controller = CONTROLLER
+
         self.execute.servos(self.arm.pulsesDict,lastpulses)
         global ARMPULSESDICT
         ARMPULSESDICT.clear()
-
-
         del CHANNELS[:]
         CHANNELS = []
-        self.execute.channels = CHANNELS
-
         del CONTROLLER[:]
         CONTROLLER = []
-        self.execute.controller = CONTROLLER
+
 
     def stop(self):
         self.execute.tpwm.set_all_pwm(0,0)
