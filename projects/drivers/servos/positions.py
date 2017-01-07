@@ -15,7 +15,7 @@ class Pos(object):
         self.arm.servosOff()
     def initial(self):
         # standard position:
-        self.arm.leftShoulder(120,5)
+        self.arm.leftShoulder(45,5)
         self.arm.leftElbow(135,5)
         self.arm.leftHand(180,5)
 
