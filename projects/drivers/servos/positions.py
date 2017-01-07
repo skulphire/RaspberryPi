@@ -83,12 +83,12 @@ class Pos(object):
         self.commit()
 
         self.body.waist(45)
-        self.body.leftThighX(30)
-        self.body.rightThighX(30)
-        self.body.leftthighY(0)
-        self.body.rightthighY(0)
-        self.body.lefthip(0)
-        self.body.righthip(0)
+        #self.body.leftThighX(30)
+        #self.body.rightThighX(30)
+        #self.body.leftthighY(0)
+        #self.body.rightthighY(0)
+        #self.body.lefthip(0)
+        #self.body.righthip(0)
 
     #method for falling backwards
     def fallingBack(self):
