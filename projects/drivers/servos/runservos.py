@@ -34,7 +34,6 @@ class RunServos(object):
             for x in range(0,maxlist):
                 pwm.set_pwm(self.channels[0],0,pulseDict[self.channels[0]][x])
         elif commands == 2:
-            print("here")
             for x in range(0,maxlist):
                 pwm.set_pwm(self.channels[0],0,self.testlist(x,pulseDict,self.channels[0]))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x,pulseDict,self.channels[1]))

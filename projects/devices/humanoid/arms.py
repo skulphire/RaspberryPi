@@ -85,7 +85,7 @@ class Arms(object):
             for x in range(self.lhLastPulse, End, step):
                 self.pulsesDict[2].append(x)
             self.lhLastPulse = pulse
-            self.execute.servos(speed, self.pulsesDict, 2)
+            #self.execute.servos(speed, self.pulsesDict, 2)
 
     #RIGHT ARM
     def rightShoulder(self, degrees, speed):
@@ -103,7 +103,7 @@ class Arms(object):
             for x in range(self.rsLastPulse, End, step):
                 self.pulsesDict[3].append(x)
             self.rsLastPulse = pulse
-            self.execute.servos(speed, self.pulsesDict, 2)
+            #self.execute.servos(speed, self.pulsesDict, 2)
 
     def rightElbow(self, degrees, speed):
         if degrees % 5 == 0:
@@ -120,7 +120,7 @@ class Arms(object):
             for x in range(self.reLastPulse, End, step):
                 self.pulsesDict[4].append(x)
             self.reLastPulse = pulse
-            self.execute.servos(speed, self.pulsesDict, 2)
+            #self.execute.servos(speed, self.pulsesDict, 2)
 
     def rightHand(self, degrees, speed):
         if degrees % 5 == 0:
@@ -137,4 +137,4 @@ class Arms(object):
             for x in range(self.rhLastPulse, End, step):
                 self.pulsesDict[5].append(x)
             self.rhLastPulse = pulse
-            self.execute.servos(speed, self.pulsesDict, 2)
+            #self.execute.servos(speed, self.pulsesDict, 2)

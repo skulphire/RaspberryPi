@@ -11,9 +11,8 @@ if __name__ == '__main__':
    arm = Arms()
    arm.leftShoulder(0,5)
    arm.leftElbow(0,5)
+   arm.leftHand(0, 5)
    arm.commit()
-   #arm.leftHand(0, 5)
-
    #arm.rightShoulder(180,5)
    #arm.rightElbow(180,5)
    #arm.rightHand(0, 5)
