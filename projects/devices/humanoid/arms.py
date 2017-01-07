@@ -1,7 +1,7 @@
 from __future__ import division
 import time
 import Adafruit_PCA9685.PCA9685
-from drivers.servos.runservos import RunServos
+from drivers.servos.helper import *
 
 class Arms(object):
     def __init__(self):
@@ -23,7 +23,7 @@ class Arms(object):
         self.reLastPulse = 0
         self.rhLastPulse = 0
 
-        #self.execute.channels = []
+        #channels = []
         self.pulsesDict = {}
 
 
@@ -46,10 +46,10 @@ class Arms(object):
             self.pulsesDict.setdefault(0,[])
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
-            self.execute.channels.append(0)
+            channels.append(0)
             self.lsLastPulse = pulse
-            self.execute.controller.append(2)
-            #self.execute.servos(speed,self.pulsesDict, 2)
+            controller.append(2)
+            #servos(speed,self.pulsesDict, 2)
 
     def leftElbow(self, degrees,speed):
         #600-150
@@ -63,12 +63,12 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(1, [])
-            self.execute.channels.append(1)
+            channels.append(1)
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
-            self.execute.controller.append(2)
-            #self.execute.servos(speed, self.pulsesDict, 2)
+            controller.append(2)
+            #servos(speed, self.pulsesDict, 2)
 
     def leftHand(self, degrees, speed):
         if degrees % 5 == 0:
@@ -81,12 +81,12 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(2, [])
-            self.execute.channels.append(2)
+            channels.append(2)
             for x in range(self.lhLastPulse, End, step):
                 self.pulsesDict[2].append(x)
             self.lhLastPulse = pulse
-            self.execute.controller.append(2)
-            #self.execute.servos(speed, self.pulsesDict, 2)
+            controller.append(2)
+            #servos(speed, self.pulsesDict, 2)
 
     #RIGHT ARM
     def rightShoulder(self, degrees, speed):
@@ -100,12 +100,12 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(3, [])
-            self.execute.channels.append(3)
+            channels.append(3)
             for x in range(self.rsLastPulse, End, step):
                 self.pulsesDict[3].append(x)
             self.rsLastPulse = pulse
-            self.execute.controller.append(2)
-            #self.execute.servos(speed, self.pulsesDict, 2)
+            controller.append(2)
+            #servos(speed, self.pulsesDict, 2)
 
     def rightElbow(self, degrees, speed):
         if degrees % 5 == 0:
@@ -118,12 +118,12 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(4, [])
-            self.execute.channels.append(4)
+            channels.append(4)
             for x in range(self.reLastPulse, End, step):
                 self.pulsesDict[4].append(x)
             self.reLastPulse = pulse
-            self.execute.controller.append(2)
-            #self.execute.servos(speed, self.pulsesDict, 2)
+            controller.append(2)
+            #servos(speed, self.pulsesDict, 2)
 
     def rightHand(self, degrees, speed):
         if degrees % 5 == 0:
@@ -136,9 +136,9 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(5, [])
-            self.execute.channels.append(5)
+            channels.append(5)
             for x in range(self.rhLastPulse, End, step):
                 self.pulsesDict[5].append(x)
             self.rhLastPulse = pulse
-            self.execute.controller.append(2)
-            #self.execute.servos(speed, self.pulsesDict, 2)
+            controller.append(2)
+            #servos(speed, self.pulsesDict, 2)

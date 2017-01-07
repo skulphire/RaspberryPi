@@ -2,7 +2,8 @@ from __future__ import division
 import time
 from devices.humanoid.arms import Arms
 from devices.humanoid.body import Body
-#from drivers.servos.runservos import RunServos
+from .helper import *
+
 
 class Pos(object):
     def __init__(self):

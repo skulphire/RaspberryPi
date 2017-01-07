@@ -1,6 +1,7 @@
 from __future__ import division
 import time
 import Adafruit_PCA9685.PCA9685
+from .helper import *
 
 
 class RunServos(object):
@@ -11,8 +12,8 @@ class RunServos(object):
         self.bpwm = Adafruit_PCA9685.PCA9685(0x40)
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
-        self.channels = []
-        self.controller = []
+        self.channels = channels
+        self.controller = controller
         self.commands = 0
         self.c = 0
 
@@ -77,7 +78,6 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
                 pwm = self.checkpwm()
                 pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                time.sleep(0.05)
         elif self.commands == 5:
             for x in range(0, maxlist):
                 pwm = self.checkpwm()
