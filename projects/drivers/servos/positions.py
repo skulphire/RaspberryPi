@@ -65,7 +65,7 @@ class Pos(object):
         # standard position:
         self.arm.leftShoulder(135,5)
         self.arm.leftElbow(150,5)
-        self.arm.leftHand(45,5)
+        self.arm.leftHand(135,5)
 
         self.arm.rightShoulder(0,5)
         self.arm.rightElbow(100,5)
