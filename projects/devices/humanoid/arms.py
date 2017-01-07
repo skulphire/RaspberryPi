@@ -2,6 +2,9 @@ from __future__ import division
 import time
 from drivers.servos.config import *
 
+global CHANNELS
+global CONTROLLER
+
 class Arms(object):
     def __init__(self):
         self.lsLastPulse = 0
