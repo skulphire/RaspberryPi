@@ -19,10 +19,11 @@ class RunServos(object):
     def testlist(self,x, pulseDict, channel):
         try:
             pulse = pulseDict[channel][x]
-            return pulse
+            self.last = pulse
         except:
+            pulse = self.last
             pass
-
+        return pulse
     def servos(self ,speed, pulseDict,controller):
         self.commands = len(self.channels)
         print(self.commands)
