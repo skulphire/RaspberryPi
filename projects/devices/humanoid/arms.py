@@ -25,7 +25,7 @@ class Arms(object):
             else:
                 End = pulse + 1
                 step = 25
-            print(len(CHANNELS))
+            print("first ",len(CHANNELS))
             self.pulsesDict.setdefault(0,[])
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
