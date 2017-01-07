@@ -27,10 +27,11 @@ class Pos(object):
         global CHANNELS
         del CHANNELS[:]
         CHANNELS = []
-        print(len(CHANNELS))
+        self.execute.channels = CHANNELS
         global CONTROLLER
         del CONTROLLER[:]
         CONTROLLER = []
+        self.execute.controller = CONTROLLER
 
     def stop(self):
         self.execute.tpwm.set_all_pwm(0,0)

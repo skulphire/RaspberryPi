@@ -58,5 +58,3 @@ class RunServos(object):
         maxlist = len(pulseDict[maxkey])
         for x in range(0, maxlist):
             self.dopwm(x, pulseDict, lastpulsestop)
-        del self.channels[:]
-        self.channels = []
