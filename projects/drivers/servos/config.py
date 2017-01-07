@@ -3,4 +3,4 @@
 
 CHANNELS = []
 CONTROLLER = []
-
+ARMPULSESDICT = {}

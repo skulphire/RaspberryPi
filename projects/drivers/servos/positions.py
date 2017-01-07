@@ -3,7 +3,7 @@ import time
 from devices.humanoid.arms import Arms
 from devices.humanoid.body import Body
 from .runservos import RunServos
-
+from .config import *
 
 class Pos(object):
     def __init__(self):
@@ -21,7 +21,8 @@ class Pos(object):
         self.arm.rhLastPulse]
 
         self.execute.servos(self.arm.pulsesDict,lastpulses)
-        self.arm.pulsesDict.clear()
+        global ARMPULSESDICT
+        ARMPULSESDICT.clear()
 
 
     def stop(self):
