@@ -23,7 +23,12 @@ class Pos(object):
         self.execute.servos(self.arm.pulsesDict,lastpulses)
         global ARMPULSESDICT
         ARMPULSESDICT.clear()
-
+        global CHANNELS
+        del CHANNELS[:]
+        CHANNELS = []
+        global CONTROLLER
+        del CONTROLLER[:]
+        CONTROLLER = []
 
     def stop(self):
         self.execute.tpwm.set_all_pwm(0,0)
@@ -43,7 +48,9 @@ class Pos(object):
         self.arm.leftElbow(90, 5)
         self.arm.leftHand(70, 5)
 
-
+        self.arm.rightShoulder(0, 5)
+        self.arm.rightElbow(90, 5)
+        self.arm.rightHand(70, 5)
         self.commit()
 
         self.arm.leftShoulder(180, 5)
