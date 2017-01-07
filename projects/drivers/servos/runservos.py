@@ -152,3 +152,4 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[11], 0, self.testlist(x, pulseDict, self.channels[11]))
                 pwm.set_pwm(self.channels[12], 0, self.testlist(x, pulseDict, self.channels[12]))
         del self.channels[:]
+        self.channels = []
