@@ -7,15 +7,13 @@ from drivers.servos.positions import Pos
 #i2cdetect -y 1
 
 if __name__ == '__main__':
-   position = Pos()
-   arm = Arms()
-   position.dance1()
-
-
-
-   #position.initial()
-   time.sleep(3)
-   position.stop()
+    position = Pos()
+    arm = Arms()
+    position.initial()
+    time.sleep(1)
+    position.dance1()
+    time.sleep(3)
+    position.stop()
 
 
     #while True:
