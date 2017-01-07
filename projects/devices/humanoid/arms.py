@@ -45,7 +45,7 @@ class Arms(object):
             self.pulsesDict.setdefault(0,[])
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
-            self.execute.channels.extend(0)
+            self.execute.channels.insert(0,0)
             self.lsLastPulse = pulse
             self.execute.servos(speed,self.pulsesDict, 2)
 
@@ -61,7 +61,7 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
                 self.pulsesDict.setdefault(1, [])
-                self.execute.channels.extend(1)
+                self.execute.channels.insert(1,1)
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
@@ -78,7 +78,7 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
                 self.pulsesDict.setdefault(2, [])
-                self.execute.channels.extend(2)
+                self.execute.channels.insert(2,2)
             for x in range(self.lhLastPulse, End, step):
                 self.pulsesDict[2].append(x)
             self.lhLastPulse = pulse
@@ -96,7 +96,7 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
                 self.pulsesDict.setdefault(3, [])
-                self.execute.channels.extend(3)
+                self.execute.channels.insert(3,3)
             for x in range(self.rsLastPulse, End, step):
                 self.pulsesDict[3].append(x)
             self.rsLastPulse = pulse
@@ -113,7 +113,7 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
                 self.pulsesDict.setdefault(4, [])
-                self.execute.channels.extend(4)
+                self.execute.channels.insert(4,4)
             for x in range(self.reLastPulse, End, step):
                 self.pulsesDict[4].append(x)
             self.reLastPulse = pulse
@@ -130,7 +130,7 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
                 self.pulsesDict.setdefault(5, [])
-                self.execute.channels.extend(5)
+                self.execute.channels.insert(5,5)
             for x in range(self.rhLastPulse, End, step):
                 self.pulsesDict[5].append(x)
             self.rhLastPulse = pulse
