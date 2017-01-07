@@ -12,17 +12,17 @@ class RunServos(object):
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
         self.channels = []
+
         self.commands = 0
         self.last = 0
 
     def testlist(self,x, pulseDict, channel):
         try:
             pulse = pulseDict[channel][x]
-            self.last = pulse
+            return pulse
         except:
-            pulse = self.last
             pass
-        return pulse
+
     def servos(self ,speed, pulseDict,controller):
         self.commands = len(self.channels)
         print(self.commands)
