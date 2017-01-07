@@ -151,4 +151,5 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[10], 0, self.testlist(x, pulseDict, self.channels[10]))
                 pwm.set_pwm(self.channels[11], 0, self.testlist(x, pulseDict, self.channels[11]))
                 pwm.set_pwm(self.channels[12], 0, self.testlist(x, pulseDict, self.channels[12]))
-        self.channels = []
+        for x in range(0,self.commands):
+            self.channels.remove(x)
