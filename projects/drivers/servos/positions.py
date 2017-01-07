@@ -2,13 +2,26 @@ from __future__ import division
 import time
 from devices.humanoid.arms import Arms
 from devices.humanoid.body import Body
+from drivers.servos.runservos import RunServos
 
 class Pos(object):
     def __init__(self):
         self.arm = Arms()
         self.body = Body()
+        self.execute = RunServos()
 
         #time.sleep(0.3)
+
+    def commit(self):
+        lastpulses = [ self.arm.lsLastPulse,
+        self.arm.leLastPulse,
+        self.arm.lhLastPulse,
+        self.arm.rsLastPulse,
+        self.arm.reLastPulse,
+        self.arm.rhLastPulse]
+
+        self.execute.servos(self.arm.pulsesDict,lastpulses)
+        self.arm.pulsesDict.clear()
 
     def stop(self):
         #time.sleep(3)
@@ -22,7 +35,7 @@ class Pos(object):
         #self.arm.rightShoulder(0,5)
         #self.arm.rightElbow(135,5)
         #self.arm.rightHand(180,5)
-        self.arm.commit()
+        self.commit()
 
         self.body.waist(45)
         self.body.leftThighX(30)

@@ -26,18 +26,7 @@ class Arms(object):
         #self.execute.channels = []
         self.pulsesDict = {}
 
-    def commit(self):
-        lastpulses = [ self.lsLastPulse,
-        self.leLastPulse,
-        self.lhLastPulse,
-        self.rsLastPulse,
-        self.reLastPulse,
-        self.rhLastPulse]
 
-
-
-        self.execute.servos(5,self.pulsesDict,2,lastpulses)
-        self.pulsesDict.clear()
     def servosOff(self):
         self.tpwm.set_all_pwm(0,0)
         self.bpwm.set_all_pwm(0,0)
@@ -59,6 +48,7 @@ class Arms(object):
                 self.pulsesDict[0].append(x)
             self.execute.channels.append(0)
             self.lsLastPulse = pulse
+            self.execute.controller.append(2)
             #self.execute.servos(speed,self.pulsesDict, 2)
 
     def leftElbow(self, degrees,speed):
@@ -77,6 +67,7 @@ class Arms(object):
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
+            self.execute.controller.append(2)
             #self.execute.servos(speed, self.pulsesDict, 2)
 
     def leftHand(self, degrees, speed):
@@ -94,6 +85,7 @@ class Arms(object):
             for x in range(self.lhLastPulse, End, step):
                 self.pulsesDict[2].append(x)
             self.lhLastPulse = pulse
+            self.execute.controller.append(2)
             #self.execute.servos(speed, self.pulsesDict, 2)
 
     #RIGHT ARM
@@ -112,6 +104,7 @@ class Arms(object):
             for x in range(self.rsLastPulse, End, step):
                 self.pulsesDict[3].append(x)
             self.rsLastPulse = pulse
+            self.execute.controller.append(2)
             #self.execute.servos(speed, self.pulsesDict, 2)
 
     def rightElbow(self, degrees, speed):
@@ -129,6 +122,7 @@ class Arms(object):
             for x in range(self.reLastPulse, End, step):
                 self.pulsesDict[4].append(x)
             self.reLastPulse = pulse
+            self.execute.controller.append(2)
             #self.execute.servos(speed, self.pulsesDict, 2)
 
     def rightHand(self, degrees, speed):
@@ -146,4 +140,5 @@ class Arms(object):
             for x in range(self.rhLastPulse, End, step):
                 self.pulsesDict[5].append(x)
             self.rhLastPulse = pulse
+            self.execute.controller.append(2)
             #self.execute.servos(speed, self.pulsesDict, 2)
