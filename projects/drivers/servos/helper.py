@@ -2,6 +2,6 @@ from __future__ import division
 import time
 from .runservos import RunServos
 
-class help():
+class obj():
     channels = []
     controller = []

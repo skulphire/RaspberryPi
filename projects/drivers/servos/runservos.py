@@ -1,19 +1,20 @@
 from __future__ import division
 import time
-import Adafruit_PCA9685.PCA9685
-from .helper import help
+import Adafruit_PCA9685.PCA96
+from .helper import obj
 
 
 class RunServos(object):
     def __init__(self):
+
         # top servo controller
         self.tpwm = Adafruit_PCA9685.PCA9685(0x41)
         # bottom servo controller
         self.bpwm = Adafruit_PCA9685.PCA9685(0x40)
         self.tpwm.set_pwm_freq(60)
         self.bpwm.set_pwm_freq(60)
-        self.channels = help.channels
-        self.controller = help.controller
+        self.channels = obj.channels
+        self.controller = obj.controller
         self.commands = 0
         self.c = 0
 
