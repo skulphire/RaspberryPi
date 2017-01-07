@@ -10,7 +10,7 @@ if __name__ == '__main__':
     position = Pos()
     arm = Arms()
     position.initial()
-    time.sleep(1)
+    time.sleep(3)
     position.dance1()
     time.sleep(3)
     position.stop()
