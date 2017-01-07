@@ -13,8 +13,7 @@ class Pos(object):
         #time.sleep(0.3)
 
     def commit(self):
-        global CHANNELS
-        global CONTROLLER
+
         lastpulses = [ self.arm.lsLastPulse,
         self.arm.leLastPulse,
         self.arm.lhLastPulse,
@@ -23,13 +22,11 @@ class Pos(object):
         self.arm.rhLastPulse]
 
         self.execute.servos(self.arm.pulsesDict,lastpulses)
-        global ARMPULSESDICT
+
         ARMPULSESDICT.clear()
-        del CHANNELS[:]
-        CHANNELS = []
-        del CONTROLLER[:]
-        CONTROLLER = []
-        print("reset",len(CHANNELS))
+        CHANNELS[:] = []
+        CONTROLLER[:] = []
+
 
 
     def stop(self):
