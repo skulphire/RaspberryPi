@@ -1,19 +1,9 @@
 from __future__ import division
 import time
-import Adafruit_PCA9685.PCA9685
-from drivers.servos.helper import *
+from drivers.servos.config import *
 
 class Arms(object):
     def __init__(self):
-        
-        #top servo controller
-        self.tpwm = Adafruit_PCA9685.PCA9685(0x41)
-        #bottom servo controller
-        self.bpwm = Adafruit_PCA9685.PCA9685(0x40)
-
-        self.tpwm.set_pwm_freq(60)
-        self.bpwm.set_pwm_freq(60)
-       
         self.lsLastPulse = 0
         self.leLastPulse = 0
         self.lhLastPulse = 0
@@ -22,13 +12,7 @@ class Arms(object):
         self.reLastPulse = 0
         self.rhLastPulse = 0
 
-        #channels = []
         self.pulsesDict = {}
-
-
-    def servosOff(self):
-        self.tpwm.set_all_pwm(0,0)
-        self.bpwm.set_all_pwm(0,0)
 
     #LEFT ARM
     def leftShoulder(self, degrees,speed):

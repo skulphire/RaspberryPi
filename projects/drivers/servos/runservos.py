@@ -1,7 +1,7 @@
 from __future__ import division
 import time
 import Adafruit_PCA9685.PCA9685
-from .helper import *
+from .config import *
 
 
 

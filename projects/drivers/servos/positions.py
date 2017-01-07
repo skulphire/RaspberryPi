@@ -24,18 +24,19 @@ class Pos(object):
         self.arm.pulsesDict.clear()
 
     def stop(self):
-        #time.sleep(3)
-        self.arm.servosOff()
+        self.execute.tpwm.set_all_pwm(0,0)
+        self.execute.bpwm.set_all_pwm(0,0)
+
 
     def initial(self):
         # standard position:
         self.arm.leftShoulder(120,5)
         self.arm.leftElbow(90,5)
-        self.arm.leftHand(90,5)
+        self.arm.leftHand(0,5)
 
         self.arm.rightShoulder(0,5)
         self.arm.rightElbow(100,5)
-        self.arm.rightHand(90,5)
+        self.arm.rightHand(0,5)
         self.commit()
 
         self.body.waist(45)
