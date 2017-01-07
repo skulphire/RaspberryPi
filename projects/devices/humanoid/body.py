@@ -34,6 +34,22 @@ class Body(object):
 
 
     def rightThighX(self,degrees):
+        if degrees % 5 == 0:
+            pulse = (degrees * 2.5) + 120
+            pulse = int(pulse)
+            if pulse < self.wLastPulse:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+            self.pulsesDict.setdefault(11,[])
+            for x in range(self.wLastPulse, End, step):
+                self.pulsesDict[11].append(x)
+            CHANNELS.append(11)
+            self.wLastPulse = pulse
+            CONTROLLER.append(1)
+
         if degrees == 0:
             self.bpwm.set_pwm(13,0,200)
         elif degrees == 180:
