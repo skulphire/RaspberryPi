@@ -11,7 +11,7 @@ if __name__ == '__main__':
     arm = Arms()
     position.initial()
     time.sleep(3)
-    position.dance1()
+    #position.dance1()
     time.sleep(3)
     position.stop()
 
