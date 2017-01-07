@@ -21,7 +21,7 @@ class RunServos(object):
             pulse = pulseDict[channel][x]
             self.last = pulse
         except:
-            pulse = 0
+            pulse = -1
             pass
         return pulse
     def servos(self ,speed, pulseDict,controller):
