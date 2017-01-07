@@ -77,7 +77,7 @@ class Arms(object):
             else:
                 End = pulse + 1
                 step = 25
-                self.pulsesDict.setdefault(2, [])
+                self.pulsesDict = {2:[]}
                 self.execute.channels.append(2)
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[2].append(x)
