@@ -28,10 +28,11 @@ class RunServos(object):
             pass
         return pulse
 
-    def test(self,x,pulseDict,lastpulsestop):
+    def dopwm(self,x,pulseDict,lastpulsestop):
         for i in range(0,self.commands):
             pwm = self.checkpwm()
             pwm.set_pwm(self.channels[i], 0, self.testlist(x, pulseDict, self.channels[i], lastpulsestop))
+
     def checkpwm(self):
         if self.c < self.commands:
             if self.controller[self.c] == 1:
@@ -57,153 +58,27 @@ class RunServos(object):
         maxlist = len(pulseDict[maxkey])
         if self.commands == 1:
             for x in range(0,maxlist):
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
+                for x in range(0, maxlist):
+                    self.dopwm(x, pulseDict, lastpulsestop)
         elif self.commands == 2:
             for x in range(0,maxlist):
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
+                for x in range(0, maxlist):
+                    self.dopwm(x, pulseDict, lastpulsestop)
         elif self.commands == 3:
             for x in range(0, maxlist):
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                time.sleep(0.05)
+                for x in range(0, maxlist):
+                    self.dopwm(x, pulseDict, lastpulsestop)
         elif self.commands == 4:
             for x in range(0, maxlist):
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
+                for x in range(0, maxlist):
+                    self.dopwm(x, pulseDict, lastpulsestop)
         elif self.commands == 5:
             for x in range(0, maxlist):
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
+                for x in range(0, maxlist):
+                    self.dopwm(x, pulseDict, lastpulsestop)
         elif self.commands == 6:
             for x in range(0, maxlist):
-                self.test(x,pulseDict,lastpulsestop)
-        elif self.commands == 66:
-            for x in range(0, maxlist):
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm = self.checkpwm()
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
+                self.dopwm(x,pulseDict,lastpulsestop)
 
-        elif self.commands == 7:
-            for x in range(0, maxlist):
-
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
-                pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
-        elif self.commands == 8:
-            for x in range(0, maxlist):
-
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
-                pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
-                pwm.set_pwm(self.channels[7], 0, self.testlist(x, pulseDict, self.channels[7], lastpulsestop))
-        elif self.commands == 9:
-            for x in range(0, maxlist):
-
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
-                pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
-                pwm.set_pwm(self.channels[7], 0, self.testlist(x, pulseDict, self.channels[7], lastpulsestop))
-                pwm.set_pwm(self.channels[8], 0, self.testlist(x, pulseDict, self.channels[8], lastpulsestop))
-        elif self.commands == 10:
-            for x in range(0, maxlist):
-
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
-                pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
-                pwm.set_pwm(self.channels[7], 0, self.testlist(x, pulseDict, self.channels[7], lastpulsestop))
-                pwm.set_pwm(self.channels[8], 0, self.testlist(x, pulseDict, self.channels[8], lastpulsestop))
-                pwm.set_pwm(self.channels[9], 0, self.testlist(x, pulseDict, self.channels[9], lastpulsestop))
-        elif self.commands == 11:
-            for x in range(0, maxlist):
-
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
-                pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
-                pwm.set_pwm(self.channels[7], 0, self.testlist(x, pulseDict, self.channels[7], lastpulsestop))
-                pwm.set_pwm(self.channels[8], 0, self.testlist(x, pulseDict, self.channels[8], lastpulsestop))
-                pwm.set_pwm(self.channels[9], 0, self.testlist(x, pulseDict, self.channels[9], lastpulsestop))
-                pwm.set_pwm(self.channels[10], 0, self.testlist(x, pulseDict, self.channels[10], lastpulsestop))
-        elif self.commands == 12:
-            for x in range(0, maxlist):
-
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
-                pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
-                pwm.set_pwm(self.channels[7], 0, self.testlist(x, pulseDict, self.channels[7], lastpulsestop))
-                pwm.set_pwm(self.channels[8], 0, self.testlist(x, pulseDict, self.channels[8], lastpulsestop))
-                pwm.set_pwm(self.channels[9], 0, self.testlist(x, pulseDict, self.channels[9], lastpulsestop))
-                pwm.set_pwm(self.channels[10], 0, self.testlist(x, pulseDict, self.channels[10], lastpulsestop))
-                pwm.set_pwm(self.channels[11], 0, self.testlist(x, pulseDict, self.channels[11], lastpulsestop))
-        elif self.commands == 13:
-            for x in range(0, maxlist):
-
-                pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
-                pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1], lastpulsestop))
-                pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2], lastpulsestop))
-                pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3], lastpulsestop))
-                pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
-                pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5], lastpulsestop))
-                pwm.set_pwm(self.channels[6], 0, self.testlist(x, pulseDict, self.channels[6], lastpulsestop))
-                pwm.set_pwm(self.channels[7], 0, self.testlist(x, pulseDict, self.channels[7], lastpulsestop))
-                pwm.set_pwm(self.channels[8], 0, self.testlist(x, pulseDict, self.channels[8], lastpulsestop))
-                pwm.set_pwm(self.channels[9], 0, self.testlist(x, pulseDict, self.channels[9], lastpulsestop))
-                pwm.set_pwm(self.channels[10], 0, self.testlist(x, pulseDict, self.channels[10], lastpulsestop))
-                pwm.set_pwm(self.channels[11], 0, self.testlist(x, pulseDict, self.channels[11], lastpulsestop))
-                pwm.set_pwm(self.channels[12], 0, self.testlist(x, pulseDict, self.channels[12], lastpulsestop))
         del self.channels[:]
         self.channels = []
