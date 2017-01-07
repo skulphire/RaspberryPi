@@ -81,7 +81,7 @@ class Pos(object):
         self.arm.rightElbow(30,5)
         self.arm.rightHand(45,5)
 
-        self.body.waist(0)
+        self.body.waist(90)
         self.commit()
 
 
