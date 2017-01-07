@@ -22,6 +22,7 @@ class RunServos(object):
         return pulse
     def servos(self ,speed, pulseDict,controller):
         commands = len(self.channels)
+        print(commands)
         if controller == 1:
             pwm = self.bpwm
         elif controller == 2:
