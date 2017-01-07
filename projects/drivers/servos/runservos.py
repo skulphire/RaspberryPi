@@ -26,7 +26,6 @@ class RunServos(object):
     def servos(self ,speed, pulseDict,controller):
         self.commands = len(self.channels)
         print(self.commands)
-        print (self.channels[0])
         if controller == 1:
             pwm = self.bpwm
         elif controller == 2:
@@ -154,3 +153,5 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[12], 0, self.testlist(x, pulseDict, self.channels[12]))
         del self.channels[:]
         self.channels = []
+        self.commands = len(self.channels)
+        print(self.commands)
