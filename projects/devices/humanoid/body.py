@@ -37,17 +37,17 @@ class Body(object):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) + 120
             pulse = int(pulse)
-            if pulse < self.wLastPulse:
+            if pulse < self.ltxLastPulse:
                 End = pulse - 1
                 step = -25
             else:
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(11,[])
-            for x in range(self.wLastPulse, End, step):
+            for x in range(self.ltxLastPulse, End, step):
                 self.pulsesDict[11].append(x)
             CHANNELS.append(11)
-            self.wLastPulse = pulse
+            self.ltxLastPulse = pulse
             CONTROLLER.append(1)
 
        # if degrees == 0:
