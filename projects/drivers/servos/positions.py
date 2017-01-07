@@ -60,7 +60,7 @@ class Pos(object):
 
             self.arm.rightShoulder(0, 5)
             self.arm.rightElbow(45, 5)
-            self.arm.rightHand(45, 5)
+            self.arm.rightHand(135, 5)
             self.commit()
             time.sleep(.5)
 
