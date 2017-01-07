@@ -21,8 +21,10 @@ class Pos(object):
         self.arm.rhLastPulse]
 
         self.execute.servos(self.arm.pulsesDict,lastpulses)
+
         global ARMPULSESDICT
         ARMPULSESDICT.clear()
+        time.sleep(.05)
 
 
     def stop(self):
