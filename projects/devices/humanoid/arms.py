@@ -49,6 +49,7 @@ class Arms(object):
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
             self.execute.channels.append(0)
+            print(len(self.execute.channels))
             self.lsLastPulse = pulse
             #self.execute.servos(speed,self.pulsesDict, 2)
 
@@ -65,6 +66,7 @@ class Arms(object):
                 step = 25
                 self.pulsesDict.setdefault(1, [])
                 self.execute.channels.append(1)
+                print(len(self.execute.channels))
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
@@ -82,6 +84,7 @@ class Arms(object):
                 step = 25
                 self.pulsesDict.setdefault(2, [])
                 self.execute.channels.append(2)
+                print(len(self.execute.channels))
             for x in range(self.lhLastPulse, End, step):
                 self.pulsesDict[2].append(x)
             self.lhLastPulse = pulse
