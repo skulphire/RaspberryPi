@@ -20,7 +20,7 @@ if __name__ == '__main__':
    arm.commit()
    time.sleep(.5)
    #arm.leftShoulder(180, 5)
-   #arm.leftElbow(80, 5)
+   arm.leftElbow(80, 5)
    arm.leftHand(90, 5)
    arm.commit()
    #arm.rightShoulder(180,5)
