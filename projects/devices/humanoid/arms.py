@@ -2,8 +2,7 @@ from __future__ import division
 import time
 from drivers.servos.config import *
 
-global CHANNELS
-global CONTROLLER
+
 
 class Arms(object):
     def __init__(self):
@@ -16,7 +15,7 @@ class Arms(object):
         self.rhLastPulse = 0
 
         self.pulsesDict = ARMPULSESDICT
-
+        self.channel = CHANNELS
     #LEFT ARM
     def leftShoulder(self, degrees,speed):
         if degrees % 5 == 0:
@@ -28,11 +27,11 @@ class Arms(object):
             else:
                 End = pulse + 1
                 step = 25
-            print("first ",len(CHANNELS))
+            #print("first ",len(CHANNELS))
             self.pulsesDict.setdefault(0,[])
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
-            CHANNELS.append(0)
+            self.channel.append(0)
             self.lsLastPulse = pulse
             CONTROLLER.append(2)
             #servos(speed,self.pulsesDict, 2)
