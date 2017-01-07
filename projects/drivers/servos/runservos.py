@@ -14,7 +14,6 @@ class RunServos(object):
         self.channels =[0]
 
     def testlist(self,x, pulseDict, channel):
-        print("yep")
         try:
             pulse = pulseDict[channel][x]
         except:
