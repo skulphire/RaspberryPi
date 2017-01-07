@@ -42,11 +42,13 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x,pulseDict,self.channels[1]))
         elif self.commands == 3:
             for x in range(0, maxlist):
+                print("at 3")
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0]))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1]))
                 pwm.set_pwm(self.channels[2], 0, self.testlist(x, pulseDict, self.channels[2]))
                 time.sleep(0.05)
         elif self.commands == 4:
+            print("at 4")
             for x in range(0, maxlist):
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0]))
                 pwm.set_pwm(self.channels[1], 0, self.testlist(x, pulseDict, self.channels[1]))
