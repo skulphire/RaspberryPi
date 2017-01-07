@@ -23,7 +23,7 @@ class Arms(object):
         self.reLastPulse = 0
         self.rhLastPulse = 0
 
-        self.execute.channels = []
+        #self.execute.channels = []
         self.pulsesDict = {}
 
     def commit(self):
