@@ -19,9 +19,9 @@ class Pos(object):
         self.arm.leftElbow(135,5)
         self.arm.leftHand(180,5)
 
-        self.arm.rightShoulder(60,5)
-        self.arm.rightElbow(45,5)
-        self.arm.rightHand(0,5)
+        self.arm.rightShoulder(120,5)
+        self.arm.rightElbow(135,5)
+        self.arm.rightHand(180,5)
         self.arm.commit()
 
         self.body.waist(45)
