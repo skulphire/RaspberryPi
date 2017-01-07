@@ -15,7 +15,7 @@ class Arms(object):
         self.rhLastPulse = 0
 
         self.pulsesDict = ARMPULSESDICT
-        
+
     #LEFT ARM
     def leftShoulder(self, degrees,speed):
         if degrees % 5 == 0:
@@ -27,7 +27,6 @@ class Arms(object):
             else:
                 End = pulse + 1
                 step = 25
-            #print("first ",len(CHANNELS))
             self.pulsesDict.setdefault(0,[])
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
@@ -121,11 +120,9 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(5, [])
-            print(len(CHANNELS))
             CHANNELS.append(5)
             for x in range(self.rhLastPulse, End, step):
                 self.pulsesDict[5].append(x)
             self.rhLastPulse = pulse
             CONTROLLER.append(2)
-            print(len(CHANNELS))
             #servos(speed, self.pulsesDict, 2)
