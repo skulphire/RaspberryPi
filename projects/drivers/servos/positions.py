@@ -23,6 +23,7 @@ class Pos(object):
         self.execute.servos(self.arm.pulsesDict,lastpulses)
         self.arm.pulsesDict.clear()
 
+
     def stop(self):
         self.execute.tpwm.set_all_pwm(0,0)
         self.execute.bpwm.set_all_pwm(0,0)
