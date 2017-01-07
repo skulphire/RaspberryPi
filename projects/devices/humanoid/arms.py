@@ -29,6 +29,7 @@ class Arms(object):
     def commit(self):
         self.execute.servos(5,self.pulsesDict,2)
         self.pulsesDict.clear()
+        print(self.pulsesDict[0][0])
     def servosOff(self):
         self.tpwm.set_all_pwm(0,0)
         self.bpwm.set_all_pwm(0,0)
