@@ -25,15 +25,23 @@ class RunServos(object):
             pass
         return pulse
     def checkpwm(self):
-        if self.controller[self.c] == 1:
-            pwm = self.bpwm
-        elif self.controller[self.c] == 2:
-            pwm = self.tpwm
-        self.c = self.c + 1
+        if self.c < self.commands:
+            if self.controller[self.c] == 1:
+                pwm = self.bpwm
+            elif self.controller[self.c] == 2:
+                pwm = self.tpwm
+            self.c = self.c + 1
+        else:
+            self.c = 0
+            if self.controller[self.c] == 1:
+                pwm = self.bpwm
+            elif self.controller[self.c] == 2:
+                pwm = self.tpwm
+            self.c = self.c + 1
         return pwm
 
     def servos(self, pulseDict, lastpulsestop):
-        self.c=0
+        self.c = 0
         self.commands = len(self.channels)
         print(self.commands)
         #finds the biggest list in the dictionary

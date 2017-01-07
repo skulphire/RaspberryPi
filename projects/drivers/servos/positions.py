@@ -18,6 +18,7 @@ class Pos(object):
         self.arm.rsLastPulse,
         self.arm.reLastPulse,
         self.arm.rhLastPulse]
+
         print("before: ",len(self.arm.execute.channels))
         self.arm.execute.servos(self.arm.pulsesDict,lastpulses)
         self.arm.pulsesDict.clear()
@@ -26,6 +27,7 @@ class Pos(object):
     def stop(self):
         #time.sleep(3)
         self.arm.servosOff()
+
     def initial(self):
         # standard position:
         self.arm.leftShoulder(120,5)
