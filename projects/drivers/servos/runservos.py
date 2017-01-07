@@ -23,7 +23,6 @@ class RunServos(object):
         except:
             pulse = self.last
             pass
-        print(pulse)
         return pulse
     def servos(self ,speed, pulseDict,controller):
         self.commands = len(self.channels)

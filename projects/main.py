@@ -20,8 +20,8 @@ if __name__ == '__main__':
    arm.commit()
    time.sleep(.5)
    arm.leftShoulder(0, 5)
-   arm.leftElbow(180, 5)
-   arm.leftHand(180, 5)
+   arm.leftElbow(0, 5)
+   arm.leftHand(0, 5)
    arm.commit()
 
 
