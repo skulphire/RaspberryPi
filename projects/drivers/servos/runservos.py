@@ -53,7 +53,7 @@ class RunServos(object):
         self.c = 0
         self.commands = len(self.channels)
         print(self.commands)
-        print(pulseDict[0])
+        print(pulseDict[3])
         #finds the biggest list in the dictionary
         maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
         maxlist = len(pulseDict[maxkey])
