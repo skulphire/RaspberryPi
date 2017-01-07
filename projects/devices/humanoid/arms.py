@@ -55,7 +55,6 @@ class Arms(object):
     def leftElbow(self, degrees,speed):
         #600-150
         if degrees % 5 == 0:
-            print("here")
             pulse = (degrees * 2.5) + 150
             pulse = int(pulse)
             if pulse < self.leLastPulse:
@@ -65,7 +64,7 @@ class Arms(object):
                 End = pulse + 1
                 step = 25
                 self.pulsesDict.setdefault(1, [])
-                self.execute.channels.insert(1,1)
+                self.execute.channels.append(1)#.insert(1,1)
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
