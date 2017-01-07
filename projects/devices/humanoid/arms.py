@@ -33,6 +33,7 @@ class Arms(object):
 
     #LEFT ARM
     def leftShoulder(self, degrees,speed):
+        print("here")
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) + 100
             pulse = int(pulse)
