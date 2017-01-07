@@ -17,7 +17,7 @@ class Body(object):
 
     def waist(self,degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) + 200
+            pulse = (degrees * 2.5) + 250
             pulse = int(pulse)
             if pulse < self.wLastPulse:
                 End = pulse - 1
