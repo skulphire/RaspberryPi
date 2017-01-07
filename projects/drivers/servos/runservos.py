@@ -51,7 +51,7 @@ class RunServos(object):
     def servos(self, pulseDict, lastpulsestop):
         self.c = 0
         self.commands = len(CHANNELS)
-        print(self.commands)
+        #print(self.commands)
         #finds the biggest list in the dictionary
         maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
         maxlist = len(pulseDict[maxkey])
