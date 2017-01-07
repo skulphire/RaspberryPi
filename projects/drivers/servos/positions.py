@@ -52,6 +52,15 @@ class Pos(object):
         self.arm.rightHand(180, 5)
         self.commit()
 
+        self.arm.leftShoulder(180, 5)
+        self.arm.leftElbow(100, 5)
+        self.arm.leftHand(90, 5)
+
+        self.arm.rightShoulder(0, 5)
+        self.arm.rightElbow(100, 5)
+        self.arm.rightHand(90, 5)
+        self.commit()
+
     def initial(self):
         # standard position:
         self.arm.leftShoulder(135,5)
