@@ -2,14 +2,14 @@ from __future__ import division
 import time
 from devices.humanoid.arms import Arms
 from devices.humanoid.body import Body
-from .helper import *
+from .runservos import RunServos
 
 
 class Pos(object):
     def __init__(self):
         self.arm = Arms()
         self.body = Body()
-
+        self.execute = RunServos()
         #time.sleep(0.3)
 
     def commit(self):
@@ -20,10 +20,8 @@ class Pos(object):
         self.arm.reLastPulse,
         self.arm.rhLastPulse]
 
-        print("before: ",len(self.arm.execute.channels))
-        self.arm.execute.servos(self.arm.pulsesDict,lastpulses)
+        self.execute.servos(self.arm.pulsesDict,lastpulses)
         self.arm.pulsesDict.clear()
-        print("after: ", len(self.arm.execute.channels))
 
     def stop(self):
         #time.sleep(3)
