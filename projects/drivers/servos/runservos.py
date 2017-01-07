@@ -16,6 +16,13 @@ class RunServos(object):
         #self.arm = Arms()
         #self.body = Body()
 
+    def testlist(self,x, pulseDict, channel):
+        try:
+            pulse = pulseDict[channel][x]
+        except:
+            pulse = pulseDict[channel][x-1]
+            pass
+        return pulse
     def servos(self ,speed, pulseDict,controller):
         commands = len(self.channels)
         if controller == 1:
@@ -30,6 +37,10 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[0],0,pulseDict[self.channels[0]][x])
         elif commands == 2:
             for x in range(0,maxlist):
+                pwm.set_pwm(self.channels[0],0,self.testlist(x,pulseDict,self.channels[0]))
+                pwm.set_pwm(self.channels[1], 0, self.testlist(x,pulseDict,self.channels[1]))
+        elif commands == 3:
+            for x in range(0,maxlist):
                 try:
                     p1 = pulseDict[self.channels[0]][x]
                 except:
@@ -38,7 +49,32 @@ class RunServos(object):
                     p2 = pulseDict[self.channels[0]][x]
                 except:
                     pass
+                try:
+                    p3 = pulseDict[self.channels[0]][x]
+                except:
+                    pass
                 pwm.set_pwm(self.channels[0],0,p1)
                 pwm.set_pwm(self.channels[1], 0, p2)
-
+                pwm.set_pwm(self.channels[2], 0, p3)
+        elif commands == 4:
+            for x in range(0, maxlist):
+                try:
+                    p1 = pulseDict[self.channels[0]][x]
+                except:
+                    pass
+                try:
+                    p2 = pulseDict[self.channels[0]][x]
+                except:
+                    pass
+                try:
+                    p3 = pulseDict[self.channels[0]][x]
+                except:
+                    pass
+                try:
+                    p4 = pulseDict[self.channels[0]][x]
+                except:
+                    pass
+                pwm.set_pwm(self.channels[0], 0, p1)
+                pwm.set_pwm(self.channels[1], 0, p2)
+                pwm.set_pwm(self.channels[2], 0, p3)
         self.channels = []
