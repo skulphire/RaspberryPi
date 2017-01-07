@@ -13,13 +13,14 @@ class RunServos(object):
         self.bpwm.set_pwm_freq(60)
         self.channels =[]
         self.commands = 0
+        self.last = 0
 
     def testlist(self,x, pulseDict, channel):
         try:
             pulse = pulseDict[channel][x]
-            last = pulse
+            self.last = pulse
         except:
-            pulse = last
+            pulse = self.last
             pass
         return pulse
     def servos(self ,speed, pulseDict,controller):
