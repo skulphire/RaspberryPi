@@ -22,7 +22,7 @@ class Pos(object):
         self.arm.rightShoulder(60,5)
         self.arm.rightElbow(45,5)
         self.arm.rightHand(0,5)
-
+        self.arm.commit()
         self.body.waist(45)
         self.body.leftThighX(30)
         self.body.rightThighX(30)

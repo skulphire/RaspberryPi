@@ -8,21 +8,7 @@ from drivers.servos.positions import Pos
 
 if __name__ == '__main__':
    position = Pos()
-   arm = Arms()
-   arm.leftShoulder(120,5)
-   arm.leftElbow(135,5)
-   arm.leftHand(90, 5)
-   arm.commit()
-   time.sleep(.5)
-   arm.leftShoulder(60, 5)
-   arm.leftElbow(45, 5)
-   arm.leftHand(0, 5)
-   arm.commit()
-   time.sleep(.5)
-   arm.leftShoulder(90, 5)
-   arm.leftElbow(90, 5)
-   arm.leftHand(90, 5)
-   arm.commit()
+   position.initial()
 
 
 
