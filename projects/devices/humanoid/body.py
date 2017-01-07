@@ -50,12 +50,12 @@ class Body(object):
             self.wLastPulse = pulse
             CONTROLLER.append(1)
 
-        if degrees == 0:
-            self.bpwm.set_pwm(13,0,200)
-        elif degrees == 180:
-            self.bpwm.set_pwm(13,0,600)
-        elif degrees == 30:
-            self.bpwm.set_pwm(13,0,500)
+       # if degrees == 0:
+       #     self.bpwm.set_pwm(13,0,200)
+       # elif degrees == 180:
+        #    self.bpwm.set_pwm(13,0,600)
+        #3elif degrees == 30:
+        #    self.bpwm.set_pwm(13,0,500)
 
     def rightthighY(self, degrees):
         if degrees == 0:
