@@ -35,7 +35,7 @@ class Body(object):
 
     def rightThighX(self,degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) + 120
+            pulse = (degrees * 2.5) + 150
             pulse = int(pulse)
             if pulse < self.ltxLastPulse:
                 End = pulse - 1
