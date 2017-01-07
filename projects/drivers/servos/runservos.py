@@ -68,7 +68,7 @@ class RunServos(object):
                 pwm.set_pwm(self.channels[3], 0, self.testlist(x, pulseDict, self.channels[3]))
                 pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4]))
                 pwm.set_pwm(self.channels[5], 0, self.testlist(x, pulseDict, self.channels[5]))
-                time.sleep(.2)
+
         elif self.commands == 7:
             for x in range(0, maxlist):
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0]))

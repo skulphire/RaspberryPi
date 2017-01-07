@@ -98,8 +98,8 @@ class Arms(object):
             else:
                 End = pulse + 1
                 step = 25
-                self.pulsesDict.setdefault(3, [])
-                self.execute.channels.insert(3,3)
+            self.pulsesDict.setdefault(3, [])
+            self.execute.channels.append(3)
             for x in range(self.rsLastPulse, End, step):
                 self.pulsesDict[3].append(x)
             self.rsLastPulse = pulse
@@ -115,8 +115,8 @@ class Arms(object):
             else:
                 End = pulse + 1
                 step = 25
-                self.pulsesDict.setdefault(4, [])
-                self.execute.channels.insert(4,4)
+            self.pulsesDict.setdefault(4, [])
+            self.execute.channels.append(4)
             for x in range(self.reLastPulse, End, step):
                 self.pulsesDict[4].append(x)
             self.reLastPulse = pulse
@@ -132,8 +132,8 @@ class Arms(object):
             else:
                 End = pulse + 1
                 step = 25
-                self.pulsesDict.setdefault(5, [])
-                self.execute.channels.insert(5,5)
+            self.pulsesDict.setdefault(5, [])
+            self.execute.channels.append(5)
             for x in range(self.rhLastPulse, End, step):
                 self.pulsesDict[5].append(x)
             self.rhLastPulse = pulse
