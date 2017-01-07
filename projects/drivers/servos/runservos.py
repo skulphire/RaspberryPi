@@ -24,6 +24,7 @@ class RunServos(object):
             pulse = lastpulsetop[channel]
             pass
         return pulse
+
     def checkpwm(self):
         if self.c < self.commands:
             if self.controller[self.c] == 1:
