@@ -14,6 +14,7 @@ if __name__ == '__main__':
    arm.rightShoulder(50, 5)
    arm.rightElbow(180, 5)
    arm.rightHand(90, 5)
+   position.commit()
 
 
    #position.initial()
