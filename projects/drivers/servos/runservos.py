@@ -28,6 +28,10 @@ class RunServos(object):
             pass
         return pulse
 
+    def test(self,x,pulseDict,lastpulsestop):
+        for i in range(0,self.commands):
+            pwm = self.checkpwm()
+            pwm.set_pwm(self.channels[i], 0, self.testlist(x, pulseDict, self.channels[i], lastpulsestop))
     def checkpwm(self):
         if self.c < self.commands:
             if self.controller[self.c] == 1:
@@ -93,6 +97,9 @@ class RunServos(object):
                 pwm = self.checkpwm()
                 pwm.set_pwm(self.channels[4], 0, self.testlist(x, pulseDict, self.channels[4], lastpulsestop))
         elif self.commands == 6:
+            for x in range(0, maxlist):
+                self.test(x,pulseDict,lastpulsestop)
+        elif self.commands == 66:
             for x in range(0, maxlist):
                 pwm = self.checkpwm()
                 pwm.set_pwm(self.channels[0], 0, self.testlist(x, pulseDict, self.channels[0], lastpulsestop))
