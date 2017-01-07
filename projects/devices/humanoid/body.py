@@ -50,16 +50,25 @@ class Body(object):
             self.ltxLastPulse = pulse
             CONTROLLER.append(1)
 
-       # if degrees == 0:
-       #     self.bpwm.set_pwm(13,0,200)
-       # elif degrees == 180:
-        #    self.bpwm.set_pwm(13,0,600)
-        #3elif degrees == 30:
-        #    self.bpwm.set_pwm(13,0,500)
-
     def rightthighY(self, degrees):
-        if degrees == 0:
-            self.bpwm.set_pwm(5, 0, 400)
+        if degrees % 5 == 0:
+            pulse = (degrees * 2.5) + 50
+            pulse = int(pulse)
+            if pulse < self.rtxLastPulse:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+            self.pulsesDict.setdefault(10, [])
+            for x in range(self.rtxLastPulse, End, step):
+                self.pulsesDict[10].append(x)
+            CHANNELS.append(10)
+            self.rtxLastPulse = pulse
+            CONTROLLER.append(1)
+
+        #if degrees == 0:
+        #    self.bpwm.set_pwm(5, 0, 400)
 
     def righthip(self, degrees):
         if degrees == 0:
