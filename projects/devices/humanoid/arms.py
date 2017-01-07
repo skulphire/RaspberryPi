@@ -48,7 +48,6 @@ class Arms(object):
             self.pulsesDict.setdefault(0,[])
             for x in range(self.lsLastPulse, End, step):
                 self.pulsesDict[0].append(x)
-                print(x)
             self.execute.channels.append(0)
             self.lsLastPulse = pulse
             #self.execute.servos(speed,self.pulsesDict, 2)
