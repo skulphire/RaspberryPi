@@ -58,53 +58,7 @@ class RunServos(object):
         maxlist = len(pulseDict[maxkey])
         for x in range(0, maxlist):
             self.dopwm(x, pulseDict, lastpulsestop)
-        if self.commands == 1:
-            for x in range(0,maxlist):
-                for x in range(0, maxlist):
-                    self.dopwm(x, pulseDict, lastpulsestop)
-        elif self.commands == 2:
-            for x in range(0,maxlist):
-                for x in range(0, maxlist):
-                    self.dopwm(x, pulseDict, lastpulsestop)
-        elif self.commands == 3:
-            for x in range(0, maxlist):
-                for x in range(0, maxlist):
-                    self.dopwm(x, pulseDict, lastpulsestop)
-        elif self.commands == 4:
-            for x in range(0, maxlist):
-                for x in range(0, maxlist):
-                    self.dopwm(x, pulseDict, lastpulsestop)
-        elif self.commands == 5:
-            for x in range(0, maxlist):
-                for x in range(0, maxlist):
-                    self.dopwm(x, pulseDict, lastpulsestop)
-        elif self.commands == 6:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 7:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 8:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 9:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 10:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 11:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 12:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 13:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
-        elif self.commands == 14:
-            for x in range(0, maxlist):
-                self.dopwm(x,pulseDict,lastpulsestop)
+
 
         del self.channels[:]
         self.channels = []
