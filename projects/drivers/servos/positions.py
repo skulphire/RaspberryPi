@@ -29,6 +29,7 @@ class Pos(object):
         CHANNELS = []
         del CONTROLLER[:]
         CONTROLLER = []
+        print("reset",len(CHANNELS))
 
 
     def stop(self):
