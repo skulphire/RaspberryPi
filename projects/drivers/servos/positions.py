@@ -29,7 +29,15 @@ class Pos(object):
         self.execute.tpwm.set_all_pwm(0,0)
         self.execute.bpwm.set_all_pwm(0,0)
 
+    def dance1(self):
+        self.arm.leftShoulder(120, 5)
+        self.arm.leftElbow(90, 5)
+        self.arm.leftHand(0, 5)
 
+        self.arm.rightShoulder(0, 5)
+        self.arm.rightElbow(100, 5)
+        self.arm.rightHand(0, 5)
+        self.commit()
     def initial(self):
         # standard position:
         self.arm.leftShoulder(120,5)
