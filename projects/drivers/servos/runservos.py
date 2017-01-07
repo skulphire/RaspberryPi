@@ -18,19 +18,22 @@ class RunServos(object):
         self.commands = 0
         self.c = 0
 
-    def testlist(self,x, pulseDict, channel, lastpulsetop):
+    def testlist(self,x, pulseDict, channel, lastpulsetop,lastpulsesbot,i):
         try:
             pulse = pulseDict[channel][x]
             self.last = pulse
         except:
-            pulse = lastpulsetop[channel]
+            if CONTROLLER[i] == 1:
+                pulse = lastpulsesbot[channel]
+            elif CONTROLLER[i] == 2:
+                pulse = lastpulsetop[channel]
             pass
         return pulse
 
-    def dopwm(self,x,pulseDict,lastpulsestop):
+    def dopwm(self,x,pulseDict,lastpulsestop,lastpulsesbot):
         for i in range(0,self.commands):
             pwm = self.checkpwm()
-            pwm.set_pwm(CHANNELS[i], 0, self.testlist(x, pulseDict, CHANNELS[i], lastpulsestop))
+            pwm.set_pwm(CHANNELS[i], 0, self.testlist(x, pulseDict, CHANNELS[i], lastpulsestop,lastpulsesbot,i))
 
     def checkpwm(self):
         if self.c < self.commands:
@@ -48,7 +51,7 @@ class RunServos(object):
             self.c = self.c + 1
         return pwm
 
-    def servos(self, pulseDict, lastpulsestop):
+    def servos(self, pulseDict, lastpulsestop,lastpulsesbot):
         self.c = 0
         self.commands = len(CHANNELS)
         #print(self.commands)
@@ -56,4 +59,4 @@ class RunServos(object):
         maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
         maxlist = len(pulseDict[maxkey])
         for x in range(0, maxlist):
-            self.dopwm(x, pulseDict, lastpulsestop)
+            self.dopwm(x, pulseDict, lastpulsestop,lastpulsesbot)

@@ -14,7 +14,7 @@ class Arms(object):
         self.reLastPulse = 0
         self.rhLastPulse = 0
 
-        self.pulsesDict = ARMPULSESDICT
+        self.pulsesDict = PULSESDICT
 
     #LEFT ARM
     def leftShoulder(self, degrees,speed):
