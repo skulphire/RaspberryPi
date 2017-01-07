@@ -55,12 +55,12 @@ class Pos(object):
             self.commit()
             time.sleep(.5)
             self.arm.leftShoulder(180, 5)
-            self.arm.leftElbow(100, 5)
-            self.arm.leftHand(90, 5)
+            self.arm.leftElbow(45, 5)
+            self.arm.leftHand(45, 5)
 
             self.arm.rightShoulder(0, 5)
-            self.arm.rightElbow(100, 5)
-            self.arm.rightHand(90, 5)
+            self.arm.rightElbow(45, 5)
+            self.arm.rightHand(45, 5)
             self.commit()
             time.sleep(.5)
 
