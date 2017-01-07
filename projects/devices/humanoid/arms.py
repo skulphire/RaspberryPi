@@ -26,6 +26,9 @@ class Arms(object):
         self.execute.channels = []
         self.pulsesDict = {}
 
+    def commit(self):
+        self.execute.servos(5,self.pulsesDict,2)
+
     def servosOff(self):
         self.tpwm.set_all_pwm(0,0)
         self.bpwm.set_all_pwm(0,0)
@@ -47,7 +50,7 @@ class Arms(object):
                 self.pulsesDict[0].append(x)
             self.execute.channels.insert(0,0)
             self.lsLastPulse = pulse
-            self.execute.servos(speed,self.pulsesDict, 2)
+            #self.execute.servos(speed,self.pulsesDict, 2)
 
     def leftElbow(self, degrees,speed):
         #600-150
@@ -65,7 +68,7 @@ class Arms(object):
             for x in range(self.leLastPulse, End, step):
                 self.pulsesDict[1].append(x)
             self.leLastPulse = pulse
-            self.execute.servos(speed, self.pulsesDict, 2)
+            #self.execute.servos(speed, self.pulsesDict, 2)
 
     def leftHand(self, degrees, speed):
         if degrees % 5 == 0:

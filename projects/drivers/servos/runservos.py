@@ -31,10 +31,8 @@ class RunServos(object):
         maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
         maxlist = len(pulseDict[maxkey])
         if commands == 1:
-            print("here1")
             for x in range(0,maxlist):
                 pwm.set_pwm(self.channels[0],0,pulseDict[self.channels[0]][x])
-                time.sleep(.3)
         elif commands == 2:
             print("here")
             for x in range(0,maxlist):
