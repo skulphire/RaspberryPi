@@ -68,8 +68,8 @@ class RunServos(object):
             maxtoplist = 0
             pass
         try:
-            maxbotkey = max(toppulseDict, key=lambda x: len(set(toppulseDict[x])))
-            maxbotlist = len(toppulseDict[maxbotkey])
+            maxbotkey = max(botpulseDict, key=lambda x: len(set(botpulseDict[x])))
+            maxbotlist = len(botpulseDict[maxbotkey])
         except:
             maxbotlist = 0
             pass
