@@ -106,7 +106,6 @@ class Body(object):
         #    self.bpwm.set_pwm(2, 0, 150)
         #elif degrees == 30:
         #    self.bpwm.set_pwm(2, 0, 300)
-
     def leftthighY(self,degrees):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) +150
