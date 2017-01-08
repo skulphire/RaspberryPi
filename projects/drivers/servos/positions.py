@@ -25,11 +25,10 @@ class Pos(object):
 
         lastpulsesbot = [self.legs.lknee,self.legs.lankleX,self.legs.lankleY,
                          self.legs.rknee,self.legs.rankleX,self.legs.rankleY,
-                         self.body.rhipLastPulse,self.body.lhipLastPulse,self.body.rtyLastPulse,
-                         self.body.ltyLastPulse,self.body.rtxLastPulse,self.body.ltxLastPulse,self.body.wLastPulse]
+                         self.body.lhipLastPulse,self.body.ltyLastPulse,self.body.ltxLastPulse,
+                         self.body.rhipLastPulse,self.body.rtyLastPulse,self.body.rtxLastPulse,self.body.wLastPulse]
 
         self.execute.servos(PULSESDICT,lastpulsestop, lastpulsesbot)
-        print(PULSESDICT[9])
         PULSESDICT.clear()
         CHANNELS[:] = []
         CONTROLLER[:] = []
@@ -84,7 +83,7 @@ class Pos(object):
         self.body.waist(90)
         self.body.rightThighX(150)
         self.body.rightthighY(180)
-        self.body.righthip(90)
+        self.body.righthip(180)
         self.commit()
 
 
