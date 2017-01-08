@@ -45,3 +45,20 @@ class Legs(object):
             CHANNELS.append(2)
             self.lankleY = pulse
             CONTROLLER.append(1)
+
+    def leftankleX(self, degrees):
+        if degrees % 5 == 0:
+            pulse = (degrees * 2.5) + 55
+            pulse = int(pulse)
+            if pulse < self.lankleX:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+            self.pulsesDict.setdefault(2, [])
+            for x in range(self.lankleX, End, step):
+                self.pulsesDict[2].append(x)
+            CHANNELS.append(2)
+            self.lankleX = pulse
+            CONTROLLER.append(1)
