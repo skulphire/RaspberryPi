@@ -12,7 +12,7 @@ if __name__ == '__main__':
     #position.initial()
     time.sleep(1)
     position.standing()
-    #position.stop()
+    position.stop()
 
     #while True:
         #mpu.printValues('b')
