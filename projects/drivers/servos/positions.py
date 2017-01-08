@@ -33,8 +33,6 @@ class Pos(object):
         CHANNELS[:] = []
         CONTROLLER[:] = []
 
-
-
     def stop(self):
         self.execute.tpwm.set_all_pwm(0,0)
         self.execute.bpwm.set_all_pwm(0,0)
@@ -83,7 +81,7 @@ class Pos(object):
         self.body.waist(90)
         self.body.rightThighX(150)
         self.body.rightthighY(180)
-        self.body.righthip(180)
+        self.body.righthip(90)
         self.commit()
 
 
