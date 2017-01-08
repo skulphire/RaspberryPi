@@ -14,7 +14,7 @@ if __name__ == '__main__':
     #position.dance1()
     time.sleep(.5)
     position.initial()
-    time.sleep(3)
+    time.sleep(8)
     position.stop()
 
 
