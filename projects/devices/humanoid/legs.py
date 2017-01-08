@@ -67,15 +67,32 @@ class Legs(object):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) + 100
             pulse = int(pulse)
-            if pulse < self.lknee:
+            if pulse < self.rknee:
                 End = pulse - 1
                 step = -25
             else:
                 End = pulse + 1
                 step = 25
             self.pulsesDict.setdefault(3,[])
-            for x in range(self.lknee, End, step):
+            for x in range(self.rknee, End, step):
                 self.pulsesDict[3].append(x)
             CHANNELS.append(3)
-            self.lknee = pulse
+            self.rknee = pulse
+            CONTROLLER.append(1)
+
+    def rightankleY(self,degrees):
+        if degrees % 5 == 0:
+            pulse = (degrees * 2) + 55
+            pulse = int(pulse)
+            if pulse < self.rankleY:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+            self.pulsesDict.setdefault(5, [])
+            for x in range(self.rankleY, End, step):
+                self.pulsesDict[5].append(x)
+            CHANNELS.append(5)
+            self.rankleY = pulse
             CONTROLLER.append(1)
