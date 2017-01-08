@@ -13,8 +13,7 @@ if __name__ == '__main__':
     time.sleep(1)
     position.standing()
     time.sleep(4)
-    position.stop()
-    position.initial()
+    #position.initial()
     time.sleep(8)
     position.stop()
 
