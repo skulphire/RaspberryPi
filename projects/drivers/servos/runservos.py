@@ -61,7 +61,21 @@ class RunServos(object):
         self.commands = len(CHANNELS)
         #print(self.commands)
         #finds the biggest list in the dictionary
-        maxkey = max(toppulseDict, key=lambda x: len(set(toppulseDict[x])))
-        maxlist = len(toppulseDict[maxkey])
+        try:
+            maxtopkey = max(toppulseDict, key=lambda x: len(set(toppulseDict[x])))
+            maxtoplist = len(toppulseDict[maxtopkey])
+        except:
+            maxtopkey = 0
+            pass
+        try:
+            maxbotkey = max(toppulseDict, key=lambda x: len(set(toppulseDict[x])))
+            maxbotlist = len(toppulseDict[maxbotkey])
+        except:
+            maxbotkey = 0
+            pass
+            if maxtopkey > maxbotkey:
+                maxlist = maxtopkey
+            else:
+                maxlist = maxbotkey
         for x in range(0, maxlist):
             self.dopwm(x,botpulseDict ,toppulseDict, lastpulsestop, lastpulsesbot)
