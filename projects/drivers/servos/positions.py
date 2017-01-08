@@ -82,7 +82,8 @@ class Pos(object):
 
         self.body.rightThighX(150)
         self.body.rightthighY(150)
-        self.body.righthip(180)
+        #self.body.righthip(180)
+        self.body.righthip(90)
 
         self.body.leftThighX(150)
         self.body.leftthighY(25)
@@ -94,7 +95,8 @@ class Pos(object):
 
         self.legs.rightknee(60)
         self.legs.rightankleY(90)
-        self.legs.rightankleX(30)
+        #self.legs.rightankleX(150)
+        self.legs.rightankleX(90)
         self.commit()
 
     def initial(self):
