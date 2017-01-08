@@ -29,7 +29,7 @@ class Pos(object):
                          self.body.ltyLastPulse,self.body.rtxLastPulse,self.body.ltxLastPulse,self.body.wLastPulse]
 
         self.execute.servos(PULSESDICT,lastpulsestop, lastpulsesbot)
-
+        print(PULSESDICT[9])
         PULSESDICT.clear()
         CHANNELS[:] = []
         CONTROLLER[:] = []
