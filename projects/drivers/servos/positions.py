@@ -89,7 +89,7 @@ class Pos(object):
         self.body.lefthip(0)
 
         self.legs.leftknee(125)
-        self.legs.leftankleY(95)
+        self.legs.leftankleY(85)
         self.legs.leftankleX(0)
 
         self.legs.rightknee(60)
