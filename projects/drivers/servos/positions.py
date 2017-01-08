@@ -71,23 +71,26 @@ class Pos(object):
 
     def initial(self):
         # standard position:
-        self.arm.leftShoulder(135,5)
-        self.arm.leftElbow(145,5)
-        self.arm.leftHand(135,5)
+#        self.arm.leftShoulder(135,5)
+#        self.arm.leftElbow(145,5)
+#        self.arm.leftHand(135,5)
 
-        self.arm.rightShoulder(45,5)
-        self.arm.rightElbow(30,5)
-        self.arm.rightHand(45,5)
+#        self.arm.rightShoulder(45,5)
+#        self.arm.rightElbow(30,5)
+#        self.arm.rightHand(45,5)
 
         self.body.waist(90)
 
         self.body.rightThighX(90)
-        self.body.rightthighY(180)
+        #self.body.rightthighY(180)
         self.body.righthip(180)
 
         self.body.leftThighX(90)
-        self.body.leftthighY(0)
+        #self.body.leftthighY(0)
         self.body.lefthip(0)
+
+        self.legs.leftknee(90)
+
         self.commit()
 
 
