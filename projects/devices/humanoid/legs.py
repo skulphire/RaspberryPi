@@ -48,14 +48,14 @@ class Legs(object):
 
     def leftankleX(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2) + 5
+            pulse = (degrees * 2) + 50
             pulse = int(pulse)
             if pulse < self.lankleX:
                 End = pulse - 1
-                step = -1
+                step = -25
             else:
                 End = pulse + 1
-                step = 1
+                step = 25
             self.pulsesDict.setdefault(1, [])
             for x in range(self.lankleX, End, step):
                 self.pulsesDict[1].append(x)
