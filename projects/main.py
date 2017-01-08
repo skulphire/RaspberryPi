@@ -9,13 +9,9 @@ from drivers.servos.positions import Pos
 if __name__ == '__main__':
     position = Pos()
     arm = Arms()
-    position.initial()
+    #position.initial()
     time.sleep(1)
     position.standing()
-    time.sleep(4)
-    #position.initial()
-    time.sleep(8)
-    position.stop()
 
 
     #while True:
