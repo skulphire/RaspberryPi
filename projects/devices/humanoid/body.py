@@ -86,7 +86,7 @@ class Body(object):
 
     def leftThighX(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) +75
+            pulse = (degrees * 1.8) +30
             pulse = int(pulse)
             if pulse < self.ltxLastPulse:
                 End = pulse - 1
