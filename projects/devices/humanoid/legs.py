@@ -14,7 +14,7 @@ class Legs(object):
 
     def leftknee(self,degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) + 140
+            pulse = (degrees * 2.5) + 130
             pulse = int(pulse)
             if pulse < self.lknee:
                 End = pulse - 1

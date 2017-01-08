@@ -81,11 +81,11 @@ class Pos(object):
 
         self.body.waist(90)
 
-        self.body.rightThighX(90)
+        self.body.rightThighX(150)
         #self.body.rightthighY(180)
         self.body.righthip(180)
 
-        self.body.leftThighX(90)
+        self.body.leftThighX(150)
         #self.body.leftthighY(0)
         self.body.lefthip(0)
 
