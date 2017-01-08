@@ -65,13 +65,13 @@ class RunServos(object):
             maxtopkey = max(toppulseDict, key=lambda x: len(set(toppulseDict[x])))
             maxtoplist = len(toppulseDict[maxtopkey])
         except:
-            maxtopkey = 0
+            maxtoplist = 0
             pass
         try:
             maxbotkey = max(toppulseDict, key=lambda x: len(set(toppulseDict[x])))
             maxbotlist = len(toppulseDict[maxbotkey])
         except:
-            maxbotkey = 0
+            maxbotlist = 0
             pass
             if maxtoplist > maxbotlist:
                 maxlist = maxtoplist
