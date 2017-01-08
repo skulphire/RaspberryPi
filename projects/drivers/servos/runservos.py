@@ -34,6 +34,7 @@ class RunServos(object):
         for i in range(0,self.commands):
             pwm = self.checkpwm()
             pwm.set_pwm(CHANNELS[i], 0, self.testlist(x, pulseDict, CHANNELS[i], lastpulsestop,lastpulsesbot,i))
+            print(i)
 
     def checkpwm(self):
         if self.c < self.commands:
