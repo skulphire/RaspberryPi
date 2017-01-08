@@ -107,9 +107,9 @@ class Legs(object):
             else:
                 End = pulse + 1
                 step = 25
-            self.pulsesDict.setdefault(1, [])
+            self.pulsesDict.setdefault(4, [])
             for x in range(self.rankleX, End, step):
-                self.pulsesDict[1].append(x)
-            CHANNELS.append(1)
+                self.pulsesDict[4].append(x)
+            CHANNELS.append(4)
             self.rankleX = pulse
             CONTROLLER.append(1)
