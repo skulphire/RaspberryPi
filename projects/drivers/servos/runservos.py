@@ -18,9 +18,9 @@ class RunServos(object):
         self.commands = 0
         self.c = 0
 
-    def testlist(self,x, pulseDict, channel, lastpulsetop,lastpulsesbot,i):
+    def testlist(self, x, toppulseDict, channel, lastpulsetop, lastpulsesbot, i):
         try:
-            pulse = pulseDict[channel][x]
+            pulse = toppulseDict[channel][x]
             self.last = pulse
         except:
             if CONTROLLER[i] == 1:
@@ -30,34 +30,38 @@ class RunServos(object):
             pass
         return pulse
 
-    def dopwm(self,x,pulseDict,lastpulsestop,lastpulsesbot):
+    def dopwm(self, x,botpulseDict ,toppulseDict, lastpulsestop, lastpulsesbot):
         for i in range(0,self.commands):
-            pwm = self.checkpwm()
-            pwm.set_pwm(CHANNELS[i], 0, self.testlist(x, pulseDict, CHANNELS[i], lastpulsestop,lastpulsesbot,i))
+            pwm,pulsedict = self.checkpwm(toppulseDict,botpulseDict)
+            pwm.set_pwm(CHANNELS[i], 0, self.testlist(x, pulsedict, CHANNELS[i], lastpulsestop, lastpulsesbot, i))
             #print(i)
 
-    def checkpwm(self):
+    def checkpwm(self,top,bot):
         if self.c < self.commands:
             if CONTROLLER[self.c] == 1:
                 pwm = self.bpwm
+                d = bot
             elif CONTROLLER[self.c] == 2:
                 pwm = self.tpwm
+                d = top
             self.c = self.c + 1
         else:
             self.c = 0
             if CONTROLLER[self.c] == 1:
                 pwm = self.bpwm
+                d=bot
             elif CONTROLLER[self.c] == 2:
                 pwm = self.tpwm
+                d=top
             self.c = self.c + 1
-        return pwm
+        return pwm,d
 
-    def servos(self, pulseDict, lastpulsestop,lastpulsesbot):
+    def servos(self,botpulseDict ,toppulseDict, lastpulsestop, lastpulsesbot):
         self.c = 0
         self.commands = len(CHANNELS)
         #print(self.commands)
         #finds the biggest list in the dictionary
-        maxkey = max(pulseDict, key=lambda x: len(set(pulseDict[x])))
-        maxlist = len(pulseDict[maxkey])
+        maxkey = max(toppulseDict, key=lambda x: len(set(toppulseDict[x])))
+        maxlist = len(toppulseDict[maxkey])
         for x in range(0, maxlist):
-            self.dopwm(x, pulseDict, lastpulsestop,lastpulsesbot)
+            self.dopwm(x,botpulseDict ,toppulseDict, lastpulsestop, lastpulsesbot)

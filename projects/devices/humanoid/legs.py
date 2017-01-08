@@ -4,7 +4,7 @@ from drivers.servos.config import *
 
 class Legs(object):
     def __init__(self):
-        self.pulsesDict = PULSESDICT
+        self.pulsesDict = TOPPULSESDICT
         self.rankleY = 0 #5
         self.rankleX = 0 #4
         self.rknee = 0 #3

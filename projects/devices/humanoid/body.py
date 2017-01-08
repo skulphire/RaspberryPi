@@ -4,7 +4,7 @@ from drivers.servos.config import *
 
 class Body(object):
     def __init__(self):
-        self.pulsesDict = PULSESDICT
+        self.pulsesDict = BOTPULSESDICT
         self.wLastPulse = 0 #12
         self.rtxLastPulse = 0 #11
         self.rtyLastPulse = 0 #10
@@ -127,7 +127,22 @@ class Body(object):
         #if degrees == 0:
         #   self.bpwm.set_pwm(0,0,400)
     def lefthip(self, degrees):
-        if degrees == 0:
-            self.bpwm.set_pwm(1,0,150)
-        elif degrees == 180:
-            self.bpwm.set_pwm(1,0,650)
+        if degrees % 5 == 0:
+            pulse = (degrees * 2.5) -50
+            pulse = int(pulse)
+            if pulse < self.lhipLastPulse:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+            self.pulsesDict.setdefault(6, [])
+            for x in range(self.lhipLastPulse, End, step):
+                self.pulsesDict[6].append(x)
+            CHANNELS.append(6)
+            self.lhipLastPulse = pulse
+            CONTROLLER.append(1)
+        #if degrees == 0:
+        #    self.bpwm.set_pwm(1,0,150)
+        #elif degrees == 180:
+        #    self.bpwm.set_pwm(1,0,650)

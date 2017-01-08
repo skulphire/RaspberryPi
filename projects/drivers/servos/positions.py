@@ -28,8 +28,9 @@ class Pos(object):
                          self.body.lhipLastPulse,self.body.ltyLastPulse,self.body.ltxLastPulse,
                          self.body.rhipLastPulse,self.body.rtyLastPulse,self.body.rtxLastPulse,self.body.wLastPulse]
 
-        self.execute.servos(PULSESDICT,lastpulsestop, lastpulsesbot)
-        PULSESDICT.clear()
+        self.execute.servos(BOTPULSESDICT, TOPPULSESDICT, lastpulsestop, lastpulsesbot)
+        TOPPULSESDICT.clear()
+        BOTPULSESDICT.clear()
         CHANNELS[:] = []
         CONTROLLER[:] = []
 
@@ -85,7 +86,7 @@ class Pos(object):
         self.body.righthip(180)
 
         self.body.leftThighX(150)
-        self.body.leftthighY(180)
+        self.body.leftthighY(0)
         self.commit()
 
 
