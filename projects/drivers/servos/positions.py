@@ -69,25 +69,22 @@ class Pos(object):
             self.commit()
             time.sleep(.1)
 
-    def initial(self):
-        # standard position:
-#        self.arm.leftShoulder(135,5)
-#        self.arm.leftElbow(145,5)
-#        self.arm.leftHand(135,5)
+    def standing(self):
+        self.arm.leftShoulder(135,5)
+        self.arm.leftElbow(145,5)
+        self.arm.leftHand(135,5)
 
-#        self.arm.rightShoulder(45,5)
-#        self.arm.rightElbow(30,5)
-#        self.arm.rightHand(45,5)
+        self.arm.rightShoulder(45,5)
+        self.arm.rightElbow(30,5)
+        self.arm.rightHand(45,5)
 
         self.body.waist(90)
 
         self.body.rightThighX(150)
-        #self.body.rightthighY(180)
         self.body.rightthighY(150)
         self.body.righthip(180)
 
         self.body.leftThighX(150)
-        #self.body.leftthighY(0)
         self.body.leftthighY(30)
         self.body.lefthip(0)
 
@@ -98,6 +95,30 @@ class Pos(object):
         self.legs.rightknee(60)
         self.legs.rightankleY(90)
         self.legs.rightankleX(150)
+        self.commit()
+
+    def initial(self):
+        # standard position:
+        self.arm.leftShoulder(135,5)
+        self.arm.leftElbow(145,5)
+        self.arm.leftHand(135,5)
+
+        self.arm.rightShoulder(45,5)
+        self.arm.rightElbow(30,5)
+        self.arm.rightHand(45,5)
+
+        self.body.waist(90)
+
+        self.body.rightThighX(150)
+        self.body.rightthighY(180)
+        #self.body.rightthighY(150)
+        self.body.righthip(180)
+
+        self.body.leftThighX(150)
+        self.body.leftthighY(0)
+        #self.body.leftthighY(30)
+        self.body.lefthip(0)
+
         self.commit()
 
 
