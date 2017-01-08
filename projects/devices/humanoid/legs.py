@@ -31,7 +31,7 @@ class Legs(object):
 
     def leftankleY(self,degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) + 25
+            pulse = (degrees * 2) + 50
             pulse = int(pulse)
             if pulse < self.lankleY:
                 End = pulse - 1
