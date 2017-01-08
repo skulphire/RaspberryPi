@@ -127,7 +127,7 @@ class Body(object):
         #   self.bpwm.set_pwm(0,0,400)
     def lefthip(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) +25
+            pulse = (degrees * 2.5)
             pulse = int(pulse)
             if pulse < self.lhipLastPulse:
                 End = pulse - 1
