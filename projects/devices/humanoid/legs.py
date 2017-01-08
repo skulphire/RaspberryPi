@@ -48,7 +48,7 @@ class Legs(object):
 
     def leftankleX(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) + 55
+            pulse = (degrees * 2.5) + 50
             pulse = int(pulse)
             if pulse < self.lankleX:
                 End = pulse - 1
@@ -61,4 +61,21 @@ class Legs(object):
                 self.pulsesDict[1].append(x)
             CHANNELS.append(1)
             self.lankleX = pulse
+            CONTROLLER.append(1)
+
+    def rightknee(self,degrees):
+        if degrees % 5 == 0:
+            pulse = (degrees * 2.5) + 180
+            pulse = int(pulse)
+            if pulse < self.lknee:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+            self.pulsesDict.setdefault(3,[])
+            for x in range(self.lknee, End, step):
+                self.pulsesDict[3].append(x)
+            CHANNELS.append(3)
+            self.lknee = pulse
             CONTROLLER.append(1)
