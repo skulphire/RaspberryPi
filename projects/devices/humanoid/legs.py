@@ -56,9 +56,9 @@ class Legs(object):
             else:
                 End = pulse + 1
                 step = 25
-            self.pulsesDict.setdefault(2, [])
+            self.pulsesDict.setdefault(1, [])
             for x in range(self.lankleX, End, step):
-                self.pulsesDict[2].append(x)
-            CHANNELS.append(2)
+                self.pulsesDict[1].append(x)
+            CHANNELS.append(1)
             self.lankleX = pulse
             CONTROLLER.append(1)
