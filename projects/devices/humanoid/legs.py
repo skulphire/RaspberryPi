@@ -96,3 +96,20 @@ class Legs(object):
             CHANNELS.append(5)
             self.rankleY = pulse
             CONTROLLER.append(1)
+
+    def rightankleX(self,degrees):
+        if degrees % 5 == 0:
+            pulse = (degrees * 2.5) + 50
+            pulse = int(pulse)
+            if pulse < self.rankleX:
+                End = pulse - 1
+                step = -25
+            else:
+                End = pulse + 1
+                step = 25
+            self.pulsesDict.setdefault(1, [])
+            for x in range(self.rankleX, End, step):
+                self.pulsesDict[1].append(x)
+            CHANNELS.append(1)
+            self.rankleX = pulse
+            CONTROLLER.append(1)
