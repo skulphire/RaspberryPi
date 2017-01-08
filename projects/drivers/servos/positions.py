@@ -92,11 +92,11 @@ class Pos(object):
         self.body.lefthip(0)
 
         self.legs.leftknee(120)
-        self.legs.leftankleY(60)
+        self.legs.leftankleY(105)
         self.legs.leftankleX(0)
 
         self.legs.rightknee(60)
-        self.legs.rightankleY(60)
+        self.legs.rightankleY(75)
         self.legs.rightankleX(150)
         self.commit()
 
