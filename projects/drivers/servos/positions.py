@@ -84,7 +84,7 @@ class Pos(object):
         self.body.rightthighY(180)
         self.body.righthip(180)
 
-        self.body.leftThighX(135)
+        self.body.leftThighX(90)
         self.commit()
 
 
