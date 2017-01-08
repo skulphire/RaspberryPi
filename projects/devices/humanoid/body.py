@@ -69,7 +69,7 @@ class Body(object):
 
     def righthip(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5)
+            pulse = (degrees * 2) + 40
             pulse = int(pulse)
             if pulse < self.rhipLastPulse:
                 End = pulse - 1
