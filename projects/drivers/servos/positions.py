@@ -87,14 +87,9 @@ class Pos(object):
 
         self.body.leftThighX(150)
         self.body.leftthighY(0)
+        self.body.lefthip(0)
         self.commit()
 
-
-
-
-
-
-        #self.body.lefthip(0)
 
 
     #method for falling backwards
