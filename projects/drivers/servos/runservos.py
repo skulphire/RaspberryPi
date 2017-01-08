@@ -73,9 +73,9 @@ class RunServos(object):
         except:
             maxbotkey = 0
             pass
-            if maxtopkey > maxbotkey:
-                maxlist = maxtopkey
+            if maxtoplist > maxbotlist:
+                maxlist = maxtoplist
             else:
-                maxlist = maxbotkey
+                maxlist = maxbotlist
         for x in range(0, maxlist):
             self.dopwm(x,botpulseDict ,toppulseDict, lastpulsestop, lastpulsesbot)
