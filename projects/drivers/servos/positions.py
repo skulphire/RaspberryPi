@@ -140,7 +140,7 @@ class Pos(object):
     def lookForward(self):
         self.body.waist(45)
     def new(self):
-
+        self.legs.rightknee(0)
         self.legs.rightankleY(0)
         self.legs.rightankleX(0)
 
