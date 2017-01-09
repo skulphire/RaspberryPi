@@ -142,5 +142,6 @@ class Pos(object):
     def new(self):
 
         self.legs.rightankleY(0)
+        self.legs.rightankleX(0)
 
         self.commit()
