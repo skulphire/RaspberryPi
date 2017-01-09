@@ -99,7 +99,7 @@ class Legs(object):
 
     def rightankleX(self,degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2) + 50
+            pulse = (degrees * 2.5) + 100
             pulse = int(pulse)
             if pulse < self.rankleX:
                 End = pulse - 1
