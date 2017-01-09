@@ -9,10 +9,11 @@ from drivers.servos.positions import Pos
 if __name__ == '__main__':
     position = Pos()
     arm = Arms()
-    #position.initial()
-    time.sleep(1)
-    position.standing()
-    position.stop()
+
+    try:
+        position.new()
+    except KeyboardInterrupt:
+        position.stop()
 
     #while True:
         #mpu.printValues('b')

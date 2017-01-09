@@ -52,7 +52,7 @@ class Body(object):
 
     def rightthighY(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) + 50
+            pulse = (degrees * 2.5) + 0 #50
             pulse = int(pulse)
             if pulse < self.rtyLastPulse:
                 End = pulse - 1
@@ -69,7 +69,7 @@ class Body(object):
 
     def righthip(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2) + 40
+            pulse = (degrees * 2) + 0 #45
             pulse = int(pulse)
             if pulse < self.rhipLastPulse:
                 End = pulse - 1
