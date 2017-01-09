@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
     try:
         position.new()
+        input("Press Enter to continue...")
     except KeyboardInterrupt:
         position.stop()
 
