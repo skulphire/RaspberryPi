@@ -141,6 +141,6 @@ class Pos(object):
         self.body.waist(45)
     def new(self):
 
-        self.body.rightthighY(0)
+        self.body.rightthighY(180)
 
         self.commit()
