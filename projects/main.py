@@ -9,8 +9,9 @@ from drivers.servos.positions import Pos
 if __name__ == '__main__':
     position = Pos()
     arm = Arms()
-
     try:
+
+
         position.new()
         input("Press Enter to continue...")
     except KeyboardInterrupt:
