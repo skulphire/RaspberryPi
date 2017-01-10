@@ -147,6 +147,6 @@ class Pos(object):
         self.legs.rightankleX(0)
 
         #self.body.lefthip(0)
-
+        self.body.leftthighY(0)
 
         self.commit()
