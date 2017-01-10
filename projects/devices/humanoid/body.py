@@ -69,7 +69,7 @@ class Body(object):
 
     def righthip(self, degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2) + 0 #45
+            pulse = (degrees * 2.5) + 150
             pulse = int(pulse)
             if pulse < self.rhipLastPulse:
                 End = pulse - 1
@@ -106,6 +106,7 @@ class Body(object):
         #    self.bpwm.set_pwm(2, 0, 150)
         #elif degrees == 30:
         #    self.bpwm.set_pwm(2, 0, 300)
+
     def leftthighY(self,degrees):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) +150
@@ -125,6 +126,7 @@ class Body(object):
 
         #if degrees == 0:
         #   self.bpwm.set_pwm(0,0,400)
+
     def lefthip(self, degrees):
         if degrees % 5 == 0:
             pulse = (degrees * 2.5) +400
