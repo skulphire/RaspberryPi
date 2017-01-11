@@ -109,7 +109,7 @@ class Body(object):
 
     def leftthighY(self,degrees):
         if degrees % 5 == 0:
-            pulse = (degrees * 2.5) +100
+            pulse = -(degrees * 2.5) +600
             pulse = int(pulse)
             if pulse < self.ltyLastPulse:
                 End = pulse - 1
